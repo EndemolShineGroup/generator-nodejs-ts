@@ -19,7 +19,6 @@ class EndemolGenerator extends Generator {
 
   async prompting() {
     this.answers = await this.prompt(prompts);
-
     this.configureProjectRoot();
   }
 
