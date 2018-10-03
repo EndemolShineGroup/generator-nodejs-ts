@@ -501,11 +501,17 @@
   dependencies:
     "@types/node" "*"
 
-"@types/yeoman-generator@*", "@types/yeoman-generator@^2.0.3":
+"@types/yeoman-generator@*":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/yeoman-generator/-/yeoman-generator-2.0.3.tgz#f4b161ee354078b526e0901a5a5f87d4f8e085f6"
   dependencies:
     "@types/events" "*"
+    "@types/inquirer" "*"
+
+"@types/yeoman-generator@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/yeoman-generator/-/yeoman-generator-3.0.0.tgz#eca2d874a4d970cc252a8fa976d215dd93a83d3d"
+  dependencies:
     "@types/inquirer" "*"
 
 "@types/yeoman-test@^1.7.4":
