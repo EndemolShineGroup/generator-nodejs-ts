@@ -31,13 +31,6 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "debug": "^4.0.1",
-    "lodash.clonedeep": "^4",
-    "lodash.foreach": "^4",
-    "lodash.isempty": "^4",
-    "lodash.isequal": "^4",
-    "lodash.omit": "^4",
-    "make-error": "^1",
     "yeoman-generator": "^3.1.1"
   },
   "devDependencies": {
@@ -46,13 +39,7 @@
     "@commitlint/prompt": "^7",
     "@semantic-release/changelog": "^3",
     "@semantic-release/git": "^7",
-    "@types/debug": "^0.0.30",
     "@types/jest": "^23",
-    "@types/lodash.clonedeep": "^4",
-    "@types/lodash.foreach": "^4",
-    "@types/lodash.isempty": "^4",
-    "@types/lodash.isequal": "^4",
-    "@types/lodash.omit": "^4",
     "@types/node": "^10",
     "@types/rimraf": "^2.0.2",
     "@types/yeoman-generator": "^2.0.3",
