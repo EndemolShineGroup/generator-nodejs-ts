@@ -5,6 +5,10 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "keywords": [
+    "yeoman-generator",
+    "typescript"
+  ],
   "author": {
     "name": "Endemol Shine Group Technology",
     "url": "https://github.com/EndemolShineGroup"
