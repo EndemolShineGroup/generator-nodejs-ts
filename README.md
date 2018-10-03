@@ -35,7 +35,7 @@ $ yo @endemolshinegroup/nodejs-ts
 [icon-npm]: https://img.shields.io/npm/v/@endemolshinegroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-npm]: https://www.npmjs.com/package/@endemolshinegroup/generator-nodejs-ts
 [icon-ci]: https://img.shields.io/travis/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
-[link-ci]: https://travis-ci.com/EndemolShineGroup/generator-nodejs-ts
+[link-ci]: https://travis-ci.org/EndemolShineGroup/generator-nodejs-ts
 [icon-greenkeeper]: https://img.shields.io/badge/greenkeeper-enabled-brightgreen.svg?longCache=true&style=flat-square
 [link-greenkeeper]: https://greenkeeper.io/
 
