@@ -28,6 +28,14 @@ Examples:
 
 ## Tasks:
 
+- [ ] Write tests
+- [ ] Write documentation
+- [ ] Fix linting errors
+- [ ] Make sure code coverage hasn't dropped
+- [ ] Provide verification config / commands / resources
+- [X] Enable "Allow edits from maintainers" for this PR
+- [ ] Update the messages below
+
 
 ***Is this ready for review?:*** NO
 ***Is it a breaking change?:*** NO
