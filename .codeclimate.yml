@@ -16,3 +16,4 @@ exclude_patterns:
   - "**/*.d.ts"
   - "**/*.spec.ts"
   - "**/*.integ.ts"
+  - "**/templates/"                                 # Exclude template files for code climate accuracy
