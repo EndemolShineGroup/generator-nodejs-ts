@@ -1,3 +1,5 @@
+import Generator from 'yeoman-generator';
+
 import prompts from './prompts';
 
 describe('prompts', () => {
@@ -6,12 +8,10 @@ describe('prompts', () => {
   });
 
   it('prompt filter trims inputs with unnecessary whitespace', () => {
-    const filter = prompts[0].filter;
+    const filter = (prompts as Generator.Question[])[0].filter;
 
-    if(filter) {
+    if (filter) {
       expect(filter('snopes    ')).toBe('snopes');
     }
-
   });
-
 });
