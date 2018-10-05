@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.4...v1.0.5) (2018-10-05)
+
+
+### Bug Fixes
+
+* **docs:** add scope to project name in README ([a9c3ee8](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/a9c3ee8))
+
 ## [1.0.4](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.3...v1.0.4) (2018-10-05)
 
 
