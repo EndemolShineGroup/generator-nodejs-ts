@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.5...v1.0.6) (2018-10-05)
+
+
+### Bug Fixes
+
+* **travis:** change Git commands to push release commit back to develop ([2eba5e3](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/2eba5e3))
+
 ## [1.0.5](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.4...v1.0.5) (2018-10-05)
 
 
