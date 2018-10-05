@@ -1,6 +1,5 @@
 # generator-nodejs-ts
 
-
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
 [![Build Status][icon-ci]][link-ci]
@@ -15,7 +14,7 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
 
-A node-js project generator using Typescript
+A Yeoman project generator for Typescript projects
 
 ## Installation
 
@@ -28,7 +27,6 @@ $ yarn add @endemolshinegroup/generator-nodejs-ts
 ```bash
 $ yo @endemolshinegroup/nodejs-ts
 ```
-
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
