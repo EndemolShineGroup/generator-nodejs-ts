@@ -3,8 +3,8 @@
   "description": "A Yeoman project generator for Typescript projects",
   "version": "1.0.2",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "generators/app/index.js",
+  "types": "generators/app/index.d.ts",
   "keywords": [
     "yeoman-generator",
     "typescript"

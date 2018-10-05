@@ -7,13 +7,14 @@
       "ES2015"
     ],
     "module": "commonjs",
-    "outDir": "generators/app/",
+    "outDir": "generators/",
     "sourceMap": true,
     "strict": true,
     "target":"ES2018"
   },
   "include": [
-    "src/**/*.ts"
+    "src",
+    "types"
   ],
   "exclude": [
     "node_modules",

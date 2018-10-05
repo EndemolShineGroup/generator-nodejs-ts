@@ -1,5 +1,5 @@
-import Generator from "yeoman-generator";
-import EndemolGenerator from ".";
+import Generator from 'yeoman-generator';
+import EndemolGenerator from '.';
 
 export type FixedGenerator = Generator & { answers: Generator.Answers };
 
@@ -7,7 +7,7 @@ export type FixedGenerator = Generator & { answers: Generator.Answers };
 export const Files: string[] = [
   // Node
   'package.json',
-  '.nvmrc',
+  '_nvmrc',
   // Typescript
   'tsconfig.json',
   'tsconfig.test.json',
@@ -20,50 +20,56 @@ export const Files: string[] = [
   'README.md',
   'CHANGELOG.md',
   'CONTRIBUTING.md',
-  '.gitignore',
-  '.github/PULL_REQUEST_TEMPLATE.md',
-  '.github/ISSUE_TEMPLATE/bug_report.md',
-  '.github/ISSUE_TEMPLATE/feature_request.md',
-  '.github/ISSUE_TEMPLATE/documentation_improvement.md',
+  '_gitignore',
+  '_github/PULL_REQUEST_TEMPLATE.md',
+  '_github/ISSUE_TEMPLATE/bug_report.md',
+  '_github/ISSUE_TEMPLATE/feature_request.md',
+  '_github/ISSUE_TEMPLATE/documentation_improvement.md',
   // Git Hooks and Tools
-  '.czrc',
-  '.huskyrc',
-  '.commitlintrc.js',
-  '.lintstagedrc.yml',
+  '_czrc',
+  '_huskyrc',
+  '_commitlintrc.js',
+  '_lintstagedrc.yml',
   // Code Tools
-  '.editorconfig',
+  '_editorconfig',
   // src
-  'src/index.ts'
+  'src/index.ts',
 ];
 
 export const PublicFiles: string[] = [
-  '.codeclimate.yml',
-  '.travis.yml',
-  '.releaserc',
-  'LICENSE'
+  '_codeclimate.yml',
+  '_travis.yml',
+  '_releaserc',
+  'LICENSE',
 ];
 
-export const PrivateFiles: string[] = [
-  'buildspec.yml'
-];
+export const PrivateFiles: string[] = ['buildspec.yml'];
+
+export const replaceTemplatePrefix = (
+  path: string,
+  replacement: string = '.',
+): string => {
+  return path.replace(/^_|\b_/g, replacement);
+};
 
 export default (gen: FixedGenerator) => {
+  let OutputFiles: string[] = [...Files];
 
   const copyTemplate = (path: string) => {
+    let replacedPath = replaceTemplatePrefix(path);
+
     gen.fs.copyTpl(
       gen.templatePath(path),
-      gen.destinationPath(path),
-      gen.answers
+      gen.destinationPath(replacedPath),
+      gen.answers,
     );
   };
 
-  let OutputFiles: string[] = [ ...Files ];
-  if(gen.answers.isPublic) {
-    OutputFiles.push(...PublicFiles)
+  if (gen.answers.isPublic) {
+    OutputFiles.push(...PublicFiles);
   } else {
     OutputFiles.push(...PrivateFiles);
   }
 
   OutputFiles.forEach(copyTemplate);
 };
-
