@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.1...v1.0.2) (2018-10-05)
+
+
+### Bug Fixes
+
+* **npm:** add .npmignore and include dist/ folder ([2fa784b](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/2fa784b))
+
 ## [1.0.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.0...v1.0.1) (2018-10-05)
 
 
