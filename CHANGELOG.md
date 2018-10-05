@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.6...v1.0.7) (2018-10-05)
+
+
+### Bug Fixes
+
+* **npm:** add npmignore to templated file list ([ada9525](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/ada9525))
+
 ## [1.0.6](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.5...v1.0.6) (2018-10-05)
 
 
