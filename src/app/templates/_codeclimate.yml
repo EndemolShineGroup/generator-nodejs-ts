@@ -5,7 +5,7 @@ plugins:
     enabled: true
 
 exclude_patterns:
-  - "_github/"                                      # Exclude GitHub issue templates
+  - ".github/"                                      # Exclude GitHub issue templates
   - "scripts/"                                      # Exclude project build scripts
   - "CHANGELOG.md"                                  # Exclude automatically generated CHANGELOG.md
   - "**/dist/"
