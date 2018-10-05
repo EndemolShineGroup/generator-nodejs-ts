@@ -1,3 +1,14 @@
+## [1.0.3](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.2...v1.0.3) (2018-10-05)
+
+
+### Bug Fixes
+
+* **npm:** add .npmignore to template ([a8c609a](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/a8c609a))
+* add missing backtick ([403ae85](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/403ae85))
+* **npm:** fix path in .npmignore ([936bc14](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/936bc14))
+* **templates:** fix accidentally renamed reference inside template ([3434d14](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/3434d14))
+* **templates:** now use _ to prefix template files ([18ebeb1](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/18ebeb1))
+
 ## [1.0.2](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.1...v1.0.2) (2018-10-05)
 
 
