@@ -7,7 +7,7 @@
   consistent style throughout the codebase keeps the cognitive load low for all
   contributors and keeps the code style homogeneous.
 
-- **Node 8 LTS:** `<%= projectName %> has a minimum Node version
+- **Node 8 LTS:** `<%= projectName %>` has a minimum Node version
   requirement of 8.0.0. Pull requests must not require a Node version greater
   than that unless the feature is enabled/backported via
   [TypeScript][link-typescript].
