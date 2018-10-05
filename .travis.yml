@@ -48,7 +48,6 @@ jobs:
         - yarn semantic-release
         - git clone https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
         - cd $TRAVIS_REPO_SLUG
-        - git fetch
-        - git checkout develop
+        - git fetch --all
         - git merge origin master
         - git push
