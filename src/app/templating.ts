@@ -4,9 +4,10 @@ export type FixedGenerator = Generator & { answers: Generator.Answers };
 
 // @TODO Replace this with `fs.walkDir()` or similar
 export const Files: string[] = [
-  // Node
+  // Node/NPM
   'package.json',
   '_nvmrc',
+  '_npmignore',
   // Typescript
   'tsconfig.json',
   'tsconfig.test.json',
