@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.3...v1.0.4) (2018-10-05)
+
+
+### Bug Fixes
+
+* **tsc:** add rootDir property to tsconfig.json ([8973c05](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/8973c05))
+
 ## [1.0.3](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.2...v1.0.3) (2018-10-05)
 
 
