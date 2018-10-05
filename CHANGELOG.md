@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.0...v1.0.1) (2018-10-05)
+
+
+### Bug Fixes
+
+* **dependencies:** remove unnecessary dependencies ([61cbfe1](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/61cbfe1))
+* **keywords:** Adds keywords to package.json ([e0051b1](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/e0051b1))
+
 # 1.0.0 (2018-10-03)
 
 
