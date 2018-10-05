@@ -1,4 +1,4 @@
-# <%= projectName %>
+# <%= projectScope %>/<%= projectName %>
 
 <%_ if(isPublic) { _%>
 [![MIT Licensed][icon-license]][link-license]
@@ -21,11 +21,16 @@
 ## Installation
 
 ```bash
-$ yarn add <%= projectScope %>/<%= projectName %>
+yarn add <%= projectScope %>/<%= projectName %>
 ```
 
 ## Usage
 
+```typescript
+import Library from <%= projectScope %>/<%= projectName %>;
+
+const library = new Library();
+```
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/<%= projectName %>.svg?longCache=true&style=flat-square
 [link-license]: LICENSE

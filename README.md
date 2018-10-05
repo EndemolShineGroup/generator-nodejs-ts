@@ -1,4 +1,4 @@
-# generator-nodejs-ts
+# @endemolshinegroup/generator-nodejs-ts
 
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
