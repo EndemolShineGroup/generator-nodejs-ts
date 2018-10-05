@@ -1,15 +1,14 @@
+import path from 'path';
 import Generator from 'yeoman-generator';
 import prompts from './prompts';
 import templating from './templating';
-import path from "path";
 
 class EndemolGenerator extends Generator {
-
   public answers: Generator.Answers = {};
 
   constructor(args: string | string[], opts: {}) {
     super(args, opts);
-    this.sourceRoot( path.join(__dirname, 'templates') );
+    this.sourceRoot(path.join(__dirname, 'templates'));
   }
 
   async initializing() {
@@ -31,7 +30,9 @@ class EndemolGenerator extends Generator {
   }
 
   configureProjectRoot() {
-    const targetDirName = this.destinationRoot().split(path.sep).pop();
+    const targetDirName = this.destinationRoot()
+      .split(path.sep)
+      .pop();
     if (targetDirName !== this.answers.projectName) {
       this.destinationRoot(this.answers.projectName);
     }

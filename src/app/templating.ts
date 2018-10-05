@@ -1,5 +1,4 @@
 import Generator from 'yeoman-generator';
-import EndemolGenerator from '.';
 
 export type FixedGenerator = Generator & { answers: Generator.Answers };
 
