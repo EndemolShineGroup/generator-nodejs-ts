@@ -19,13 +19,13 @@ A Yeoman project generator for Typescript projects
 ## Installation
 
 ```bash
-$ yarn add @endemolshinegroup/generator-nodejs-ts
+yarn add @endemolshinegroup/generator-nodejs-ts
 ```
 
 ## Usage
 
 ```bash
-$ yo @endemolshinegroup/nodejs-ts
+yo @endemolshinegroup/nodejs-ts
 ```
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square

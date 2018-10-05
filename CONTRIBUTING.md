@@ -43,10 +43,10 @@ In order to contribute, you'll need to checkout the source from GitHub and
 install dependencies using Yarn:
 
 ``` bash
-$ git clone https://github.com/EndemolShineGroup/generator-nodejs-ts.git
-$ cd generator-nodejs-ts
-$ yarn
-$ yarn test
+git clone https://github.com/EndemolShineGroup/generator-nodejs-ts.git
+cd generator-nodejs-ts
+yarn
+yarn test
 ```
 
 ## Releasing a new version
