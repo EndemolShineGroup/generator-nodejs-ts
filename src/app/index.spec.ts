@@ -12,8 +12,13 @@ import {
 } from './templating';
 
 describe('generation', () => {
-  const PROJECT_SCOPE = '@endemolshinegroup';
   const PROJECT_NAME = 'glasf-bist';
+  const answers: object = {
+    projectDescription: 'glaf as a bist in January',
+    projectName: PROJECT_NAME,
+    projectScope: '@endemolshinegroup',
+    version: '0.0.13',
+  };
 
   describe('while generating from a folder that does not have the same name as the project', () => {
     beforeEach(async () => {
@@ -21,12 +26,7 @@ describe('generation', () => {
       return helpers
         .run(path.join(__dirname))
         .inDir(path.join(__dirname, 'tmp'))
-        .withPrompts({
-          projectScope: PROJECT_SCOPE,
-          projectName: PROJECT_NAME,
-          projectDescription: 'glaf as a bist in January',
-          version: '0.0.13',
-        });
+        .withPrompts(answers);
     });
 
     afterEach(() => {
@@ -51,12 +51,7 @@ describe('generation', () => {
       return helpers
         .run(path.join(__dirname))
         .inDir(path.join(__dirname, PROJECT_NAME))
-        .withPrompts({
-          projectScope: PROJECT_SCOPE,
-          projectName: PROJECT_NAME,
-          projectDescription: 'glaf as a bist in January',
-          version: '0.0.13',
-        });
+        .withPrompts(answers);
     });
 
     afterEach(() => {
@@ -82,10 +77,7 @@ describe('generation', () => {
         .run(path.join(__dirname))
         .inDir(path.join(__dirname, 'tmp'))
         .withPrompts({
-          projectScope: PROJECT_SCOPE,
-          projectName: PROJECT_NAME,
-          projectDescription: 'glaf as a bist in January',
-          version: '0.0.13',
+          ...answers,
           isPublic: true,
         });
     });
@@ -113,10 +105,7 @@ describe('generation', () => {
         .run(path.join(__dirname))
         .inDir(path.join(__dirname, 'tmp'))
         .withPrompts({
-          projectScope: PROJECT_SCOPE,
-          projectName: PROJECT_NAME,
-          projectDescription: 'glaf as a bist in January',
-          version: '0.0.13',
+          ...answers,
           isPublic: false,
         });
     });
