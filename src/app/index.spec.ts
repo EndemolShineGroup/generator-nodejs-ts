@@ -11,7 +11,7 @@ import {
   replaceTemplatePrefix,
 } from './templating';
 
-describe('generation', () => {
+describe('EndemolShineGroupGenerator', () => {
   const PROJECT_NAME = 'glasf-bist';
   const answers: object = {
     projectDescription: 'glaf as a bist in January',
@@ -20,7 +20,7 @@ describe('generation', () => {
     version: '0.0.13',
   };
 
-  describe('while generating from a folder that does not have the same name as the project', () => {
+  describe('Generates a project from a folder that does not have the same name as the project', () => {
     beforeEach(async () => {
       // @ts-ignore
       return helpers
@@ -43,9 +43,13 @@ describe('generation', () => {
     it('folder matching project name exists and is target directory', () => {
       assert.file(path.join(__dirname, 'tmp', PROJECT_NAME));
     });
+
+    it('adds .git folder to project', () => {
+      assert.file('.git');
+    });
   });
 
-  describe('while generating from a folder that has the same name as the project', () => {
+  describe('Generates a project from a folder that has the same name as the project', () => {
     beforeEach(async () => {
       // @ts-ignore
       return helpers
@@ -68,9 +72,13 @@ describe('generation', () => {
     it('folder matching project name exists and is target directory', () => {
       assert.file(path.join(__dirname, PROJECT_NAME));
     });
+
+    it('adds .git folder to project', () => {
+      assert.file('.git');
+    });
   });
 
-  describe('Public project structural integrity', () => {
+  describe('Generates a public project correctly', () => {
     beforeEach(async () => {
       // @ts-ignore
       return helpers
@@ -98,7 +106,7 @@ describe('generation', () => {
     });
   });
 
-  describe('Private project structural integrity', () => {
+  describe('Generates a private project correctly', () => {
     beforeEach(async () => {
       // @ts-ignore
       return helpers

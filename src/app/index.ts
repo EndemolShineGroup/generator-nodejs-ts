@@ -3,7 +3,7 @@ import Generator from 'yeoman-generator';
 import prompts from './prompts';
 import templating from './templating';
 
-class EndemolGenerator extends Generator {
+export default class EndemolShineGroupGenerator extends Generator {
   public answers: Generator.Answers = {};
 
   constructor(args: string | string[], opts: {}) {
@@ -12,7 +12,7 @@ class EndemolGenerator extends Generator {
   }
 
   async initializing() {
-    this.composeWith(require.resolve('../git'), {});
+    // this.composeWith(require.resolve('../git'), {});
 
     this.log('A few questions about your project...');
     this.log('Note: Project Name will also be used for git urls');
@@ -29,6 +29,9 @@ class EndemolGenerator extends Generator {
 
   async install() {
     this.yarnInstall();
+    if (this.answers.useGit) {
+      this.spawnCommandSync('git', ['init']);
+    }
   }
 
   configureProjectRoot() {
@@ -40,5 +43,3 @@ class EndemolGenerator extends Generator {
     }
   }
 }
-
-export default EndemolGenerator;

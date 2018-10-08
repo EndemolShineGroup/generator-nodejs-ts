@@ -37,6 +37,12 @@ const prompts: Generator.Questions = [
     name: 'isPublic',
     message: 'Is this a public package?',
   },
+  {
+    type: 'confirm',
+    name: 'useGit',
+    message: 'Initialize repository with Git?',
+    default: true,
+  },
 ];
 
 export default prompts;
