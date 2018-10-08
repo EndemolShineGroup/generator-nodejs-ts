@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.7...v1.1.0) (2018-10-08)
+
+
+### Bug Fixes
+
+* remove dollar signs from bash output in template ([6113199](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/6113199))
+
+
+### Features
+
+* add git initialization and initial commit ([1d72c84](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/1d72c84))
+* update TSLint and Prettier configuration in templates ([f05d4f0](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/f05d4f0)), closes [#10](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/10) [#11](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/11)
+
 ## [1.0.7](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.6...v1.0.7) (2018-10-05)
 
 
