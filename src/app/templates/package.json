@@ -42,7 +42,7 @@
     "@semantic-release/git": "^7",
     "@types/jest": "^23",
     "@types/node": "^10",
-    "commitizen": "^2",
+    "commitizen": "^3",
     "husky": "^1",
     "jest": "^23",
     "lint-staged": "^7",
