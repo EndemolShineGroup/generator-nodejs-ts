@@ -35,8 +35,6 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@types/nodegit": "^0.22.3",
-    "nodegit": "^0.22.2",
     "yeoman-generator": "^3.1.1"
   },
   "devDependencies": {
