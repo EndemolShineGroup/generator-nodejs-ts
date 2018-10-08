@@ -1,9 +1,1 @@
-module.exports = {
-  arrowParens: 'always',
-  bracketSpacing: true,
-  jsxBracketSameLine: false,
-  parser: 'typescript',
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
-};
+module.exports = require('@endemolshinegroup/prettier-config');
