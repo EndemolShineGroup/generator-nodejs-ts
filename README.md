@@ -14,7 +14,11 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
 
-A Yeoman project generator for Typescript projects
+A Yeoman project generator for Typescript projects.
+
+This generator is geared towards quickly getting set up with a best-practices
+compliant, testable TypeScript project that can be set up with CI/CD as
+painlessly as possible.
 
 ## Installation
 
@@ -27,6 +31,31 @@ yarn add @endemolshinegroup/generator-nodejs-ts
 ```bash
 yo @endemolshinegroup/nodejs-ts
 ```
+
+The above command will generate a Node project with the following:
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [TSLint](https://palantir.github.io/tslint/)
+- [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/)
+- [Lint-Staged](https://github.com/okonet/lint-staged)
+- [Commitizen](https://commitizen.github.io/cz-cli/)
+- [CommitLint](https://marionebl.github.io/commitlint/#/)
+- [Semantic Release](https://semantic-release.gitbooks.io/)
+
+The generator is capable of creating both public open source projects as well
+as private projects.
+
+If a public project is created, the following services are added:
+
+- [CodeClimate](https://codeclimate.com/)
+- [CodeCov](https://codecov.io/)
+- [Greenkeeper](https://greenkeeper.io/)
+- [Travis CI](http://travis-ci.com/)
+
+If a private project is created, the following services are added:
+
+- [AWS CodeBuild](https://aws.amazon.com/codebuild/)
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
