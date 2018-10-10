@@ -12,8 +12,6 @@ export default class EndemolShineGroupGenerator extends Generator {
   }
 
   async initializing() {
-    // this.composeWith(require.resolve('../git'), {});
-
     this.log('A few questions about your project...');
     this.log('Note: Project Name will also be used for git urls');
   }
