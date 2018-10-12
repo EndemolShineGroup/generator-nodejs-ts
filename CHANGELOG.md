@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.1.0...v1.2.0) (2018-10-12)
+
+
+### Bug Fixes
+
+* **templating:** make travis secure environment variables clearer ([614833d](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/614833d)), closes [#9](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/9)
+* only ignore generated documentation in template ([c372987](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/c372987))
+
+
+### Features
+
+* add JSON import support to template ([edef66d](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/edef66d))
+* add stub code and tests to template ([3a57ff5](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/3a57ff5))
+
 # [1.1.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.0.7...v1.1.0) (2018-10-08)
 
 
