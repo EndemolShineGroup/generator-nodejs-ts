@@ -23,7 +23,7 @@ painlessly as possible.
 ## Installation
 
 ```bash
-yarn add @endemolshinegroup/generator-nodejs-ts
+yarn global add @endemolshinegroup/generator-nodejs-ts
 ```
 
 ## Usage
