@@ -1,5 +1,6 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
+
 import prompts from './prompts';
 import templating from './templating';
 
