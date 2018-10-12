@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.2.0...v1.2.1) (2018-10-12)
+
+
+### Bug Fixes
+
+* **templating:** add missing files to template list ([a571f9a](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/a571f9a))
+
 # [1.2.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.1.0...v1.2.0) (2018-10-12)
 
 
