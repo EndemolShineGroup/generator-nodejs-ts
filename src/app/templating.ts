@@ -34,6 +34,8 @@ export const Files: string[] = [
   '_editorconfig',
   // src
   'src/index.ts',
+  'src/index.spec.ts',
+  'src/@types/json.d.ts',
 ];
 
 export const PublicFiles: string[] = [
