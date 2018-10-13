@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.2.1...v1.2.2) (2018-10-13)
+
+
+### Bug Fixes
+
+* **ci:** run lint on Travis ([c1bc755](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/c1bc755))
+* **templating:** add src/ and coverage/ folders to .npmignore ([591910d](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/591910d)), closes [#15](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/15)
+* **templating:** use inline sourcemaps ([835e73f](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/835e73f))
+
 ## [1.2.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.2.0...v1.2.1) (2018-10-12)
 
 
