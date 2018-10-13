@@ -6,42 +6,46 @@ const filter = (input: string): string => {
 
 const prompts: Generator.Questions = [
   {
-    type: 'input',
-    name: 'projectScope',
-    message: 'NPM scope: ',
     default: '@endemolshinegroup',
+    message: 'NPM scope: ',
+    name: 'projectScope',
+    type: 'input',
+
     filter,
   },
   {
-    type: 'input',
-    name: 'projectName',
     message: 'Project Name: ',
+    name: 'projectName',
+    type: 'input',
+
     filter,
   },
   {
-    type: 'input',
-    name: 'projectDescription',
-    message: 'Description: ',
     default: 'sick project...',
-    filter,
-  },
-  {
+    message: 'Description: ',
+    name: 'projectDescription',
     type: 'input',
-    name: 'version',
-    message: 'Version: ',
-    default: '0.0.1',
+
     filter,
   },
   {
-    type: 'confirm',
-    name: 'isPublic',
-    message: 'Is this a public package?',
+    default: '0.0.1',
+    message: 'Version: ',
+    name: 'version',
+    type: 'input',
+
+    filter,
   },
   {
+    message: 'Is this a public package?',
+    name: 'isPublic',
     type: 'confirm',
-    name: 'useGit',
-    message: 'Initialize repository with Git?',
+  },
+  {
     default: true,
+    message: 'Initialize repository with Git?',
+    name: 'useGit',
+    type: 'confirm',
   },
 ];
 
