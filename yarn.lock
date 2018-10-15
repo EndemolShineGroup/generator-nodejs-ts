@@ -155,10 +155,10 @@
   dependencies:
     find-up "^2.1.0"
 
-"@endemolshinegroup/cz-github@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@endemolshinegroup/cz-github/-/cz-github-1.0.0.tgz#77f6dca1833af8c86a614dbaed09b8238427e0de"
-  integrity sha512-uhY3nO8qEulvgizqHhVsjI/0TqcgOEYjjmPZr+OLeYDMg8VANtCyJO4I1m17D/IpOuKCJpi7TxcfzklQeF0ELg==
+"@endemolshinegroup/cz-github@^1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@endemolshinegroup/cz-github/-/cz-github-1.0.1.tgz#41f7b46e974998f37debdd72a37337c4c999b9ef"
+  integrity sha512-FmuSkXtW3xSPmTuyzAxljeNJ4KHQHA23kXC+KBfKy6olxF2Tz4GGodzp2UypbZ2HGDM0CHnRIdirY4Ub0qMWgQ==
   dependencies:
     conventional-commit-types "^2.2.0"
     git-branch "^2.0.1"
