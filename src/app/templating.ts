@@ -42,6 +42,7 @@ export const PublicFiles: string[] = [
   '_codeclimate.yml',
   '_travis.yml',
   '_releaserc',
+  'codecov.yml',
   'LICENSE',
 ];
 
