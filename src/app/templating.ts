@@ -22,9 +22,6 @@ export const Files: string[] = [
   'CONTRIBUTING.md',
   '_gitignore',
   '_github/PULL_REQUEST_TEMPLATE.md',
-  '_github/ISSUE_TEMPLATE/bug_report.md',
-  '_github/ISSUE_TEMPLATE/feature_request.md',
-  '_github/ISSUE_TEMPLATE/documentation_improvement.md',
   // Git Hooks and Tools
   '_czrc',
   '_huskyrc',
@@ -40,6 +37,9 @@ export const Files: string[] = [
 
 export const PublicFiles: string[] = [
   '_codeclimate.yml',
+  '_github/ISSUE_TEMPLATE/bug_report.md',
+  '_github/ISSUE_TEMPLATE/feature_request.md',
+  '_github/ISSUE_TEMPLATE/documentation_improvement.md',
   '_travis.yml',
   '_releaserc',
   'codecov.yml',
