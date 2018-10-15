@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.0...v1.3.1) (2018-10-15)
+
+
+### Bug Fixes
+
+* **templating:** disable patch branch checks on CodeCov ([7b91ab1](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/7b91ab1))
+
 # [1.3.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.2.2...v1.3.0) (2018-10-14)
 
 
