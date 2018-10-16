@@ -29,7 +29,7 @@ export default class EndemolShineGroupGenerator extends Generator {
   async install() {
     this.yarnInstall();
     if (this.answers.useGit) {
-      this.spawnCommandSync('git', ['init']);
+      this.spawnCommandSync('git', ['init', '--quiet']);
     }
   }
 
