@@ -35,7 +35,9 @@
   "devDependencies": {
     "@commitlint/cli": "^7",
     "@commitlint/config-conventional": "^7",
+    <%_ if(isPublic) { _%>
     "@endemolshinegroup/cz-github": "^1",
+    <%_ } _%>
     "@endemolshinegroup/prettier-config": "^1",
     "@endemolshinegroup/tslint-config": "^1",
     "@semantic-release/changelog": "^3",
@@ -43,6 +45,9 @@
     "@types/jest": "^23",
     "@types/node": "^10",
     "commitizen": "^3",
+    <%_ if(!isPublic) { _%>
+    "cz-jira-smart-commit": "^3",
+    <%_ } _%>
     "husky": "^1",
     "jest": "^23",
     "lint-staged": "^7",

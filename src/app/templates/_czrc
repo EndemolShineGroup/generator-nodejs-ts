@@ -1,3 +1,7 @@
 {
+  <%_ if(isPublic) { _%>
   "path": "@endemolshinegroup/cz-github"
+  <%_ } else { _%>
+  "path": "cz-jira-smart-commit"
+  <%_ } _%>
 }
