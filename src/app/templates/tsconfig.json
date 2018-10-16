@@ -4,14 +4,14 @@
     "declaration": true,
     "esModuleInterop": true,
     "lib": [
-      "ES2015"
+      "es2015"
     ],
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
-    "target":"ES2018"
+    "target":"ES2015"
   },
   "include": [
     "src/**/*.ts"
