@@ -1,3 +1,12 @@
+## [1.3.2](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.1...v1.3.2) (2018-10-16)
+
+
+### Bug Fixes
+
+* **commiting:** add commitizen jira adaptor for private projects ([4c29636](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/4c29636)), closes [#16](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/16)
+* **templating:** only add issue templates for public projects ([91c57ae](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/91c57ae)), closes [#17](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/17)
+* **templating:** use correct values in tsconfig.json ([0560ada](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/0560ada))
+
 ## [1.3.1](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.0...v1.3.1) (2018-10-15)
 
 
