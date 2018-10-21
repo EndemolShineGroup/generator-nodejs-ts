@@ -1,5 +1,6 @@
 import path from 'path';
 import rimraf from 'rimraf';
+import uuid from 'uuid/v4';
 // @ts-ignore
 import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
@@ -11,6 +12,14 @@ import {
   replaceTemplatePrefix,
 } from './templating';
 
+const generate = (outputPath: string, answers: object) => {
+  // @ts-ignore
+  return helpers
+    .run(__dirname)
+    .inDir(outputPath)
+    .withPrompts(answers);
+};
+
 describe('EndemolShineGroupGenerator', () => {
   const PROJECT_NAME = 'glasf-bist';
   const answers: object = {
@@ -21,27 +30,25 @@ describe('EndemolShineGroupGenerator', () => {
   };
 
   describe('Generates a project from a folder that does not have the same name as the project', () => {
+    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+
     beforeEach(async () => {
-      // @ts-ignore
-      return helpers
-        .run(path.join(__dirname))
-        .inDir(path.join(__dirname, 'tmp'))
-        .withPrompts(answers);
+      return generate(OUTPUT_PATH, answers);
     });
 
     afterEach(() => {
-      rimraf.sync(path.join(__dirname, 'tmp'));
+      rimraf.sync(OUTPUT_PATH);
     });
 
     it('correctly inserts prompt answers into package.json', () => {
       assert.fileContent(
-        path.join(__dirname, 'tmp', PROJECT_NAME, 'package.json'),
+        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
         /"name":\sPROJECT_NAME|"version":\s"0.0.13"|"description":\s"glaf as a bist in January"/g,
       );
     });
 
     it('folder matching project name exists and is target directory', () => {
-      assert.file(path.join(__dirname, 'tmp', PROJECT_NAME));
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME));
     });
 
     it('adds .git folder to project', () => {
@@ -50,27 +57,25 @@ describe('EndemolShineGroupGenerator', () => {
   });
 
   describe('Generates a project from a folder that has the same name as the project', () => {
+    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+
     beforeEach(async () => {
-      // @ts-ignore
-      return helpers
-        .run(path.join(__dirname))
-        .inDir(path.join(__dirname, PROJECT_NAME))
-        .withPrompts(answers);
+      return generate(OUTPUT_PATH, answers);
     });
 
     afterEach(() => {
-      rimraf.sync(path.join(__dirname, PROJECT_NAME));
+      rimraf.sync(OUTPUT_PATH);
     });
 
     it('correctly inserts prompt answers into package.json', () => {
       assert.fileContent(
-        path.join(__dirname, PROJECT_NAME, 'package.json'),
+        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
         /"name":\sPROJECT_NAME|"version":\s"0.0.13"|"description":\s"glaf as a bist in January"/g,
       );
     });
 
     it('folder matching project name exists and is target directory', () => {
-      assert.file(path.join(__dirname, PROJECT_NAME));
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME));
     });
 
     it('adds .git folder to project', () => {
@@ -79,19 +84,17 @@ describe('EndemolShineGroupGenerator', () => {
   });
 
   describe('Generates a public project correctly', () => {
+    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+
     beforeEach(async () => {
-      // @ts-ignore
-      return helpers
-        .run(path.join(__dirname))
-        .inDir(path.join(__dirname, 'tmp'))
-        .withPrompts({
-          ...answers,
-          isPublic: true,
-        });
+      return generate(OUTPUT_PATH, {
+        ...answers,
+        isPublic: true,
+      });
     });
 
     afterEach(() => {
-      rimraf.sync(path.join(__dirname, 'tmp'));
+      rimraf.sync(OUTPUT_PATH);
     });
 
     it('copies all files and public project files', function() {
@@ -107,19 +110,17 @@ describe('EndemolShineGroupGenerator', () => {
   });
 
   describe('Generates a private project correctly', () => {
+    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+
     beforeEach(async () => {
-      // @ts-ignore
-      return helpers
-        .run(path.join(__dirname))
-        .inDir(path.join(__dirname, 'tmp'))
-        .withPrompts({
-          ...answers,
-          isPublic: false,
-        });
+      return generate(OUTPUT_PATH, {
+        ...answers,
+        isPublic: false,
+      });
     });
 
     afterEach(() => {
-      rimraf.sync(path.join(__dirname, 'tmp'));
+      rimraf.sync(OUTPUT_PATH);
     });
 
     it('copies all files and private project files', function() {
