@@ -135,6 +135,17 @@ describe('EndemolShineGroupGenerator', () => {
         /access=public/g,
       );
     });
+
+    it('generates a valid .github/settings.yml', () => {
+      [/private: false/g, /has_issues: true/g, /has_downloads: true/g].forEach(
+        (regex) => {
+          assert.fileContent(
+            path.join(OUTPUT_PATH, PROJECT_NAME, '.github', 'settings.yml'),
+            regex,
+          );
+        },
+      );
+    });
   });
 
   describe('Generates a private project correctly', () => {
@@ -166,6 +177,17 @@ describe('EndemolShineGroupGenerator', () => {
       assert.fileContent(
         path.join(OUTPUT_PATH, PROJECT_NAME, '.npmrc'),
         /access=restricted/g,
+      );
+    });
+
+    it('generates a valid .github/settings.yml', () => {
+      [/private: true/g, /has_issues: false/g, /has_downloads: false/g].forEach(
+        (regex) => {
+          assert.fileContent(
+            path.join(OUTPUT_PATH, PROJECT_NAME, '.github', 'settings.yml'),
+            regex,
+          );
+        },
       );
     });
   });

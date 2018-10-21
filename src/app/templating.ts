@@ -24,6 +24,7 @@ export const Files: string[] = [
   '_gitignore',
   // GitHub
   '_github/PULL_REQUEST_TEMPLATE.md',
+  '_github/settings.yml',
   'CODEOWNERS',
   // Git Hooks and Tools
   '_czrc',
