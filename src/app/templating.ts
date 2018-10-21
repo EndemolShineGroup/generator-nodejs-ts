@@ -6,6 +6,7 @@ export type FixedGenerator = Generator & { answers: Generator.Answers };
 export const Files: string[] = [
   // Node/NPM
   'package.json',
+  '_npmrc',
   '_nvmrc',
   '_npmignore',
   // Typescript

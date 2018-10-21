@@ -1,3 +1,4 @@
+import os from 'os';
 import path from 'path';
 import rimraf from 'rimraf';
 import uuid from 'uuid/v4';
@@ -30,7 +31,7 @@ describe('EndemolShineGroupGenerator', () => {
   };
 
   describe('Generates a project from a folder that does not have the same name as the project', () => {
-    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
       return generate(OUTPUT_PATH, answers);
@@ -57,7 +58,7 @@ describe('EndemolShineGroupGenerator', () => {
   });
 
   describe('Generates a project from a folder that has the same name as the project', () => {
-    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
       return generate(OUTPUT_PATH, answers);
@@ -84,7 +85,7 @@ describe('EndemolShineGroupGenerator', () => {
   });
 
   describe('Generates a public project correctly', () => {
-    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
       return generate(OUTPUT_PATH, {
@@ -107,10 +108,17 @@ describe('EndemolShineGroupGenerator', () => {
 
       assert.file([...templateReplacedFiles, ...templateReplacedPublicFiles]);
     });
+
+    it('generates an .npmrc with access=public', () => {
+      assert.fileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, '.npmrc'),
+        /access=public/g,
+      );
+    });
   });
 
   describe('Generates a private project correctly', () => {
-    const OUTPUT_PATH = path.join(__dirname, 'tmp', uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
       return generate(OUTPUT_PATH, {
@@ -132,6 +140,13 @@ describe('EndemolShineGroupGenerator', () => {
       );
 
       assert.file([...templateReplacedFiles, ...templateReplacedPrivateFiles]);
+    });
+
+    it('generates an .npmrc with access=restricted', () => {
+      assert.fileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, '.npmrc'),
+        /access=restricted/g,
+      );
     });
   });
 });
