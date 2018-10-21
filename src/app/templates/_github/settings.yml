@@ -1,0 +1,55 @@
+# These settings are synced to GitHub by https://probot.github.io/apps/settings/
+
+repository:
+
+  private: <% if(isPublic) { _%>false<%_ } else { _%>true<%_ } %>
+
+  has_issues: <% if(isPublic) { _%>true<%_ } else { _%>false<%_ } %>
+
+  has_projects: false
+
+  has_wiki: false
+
+  has_downloads: <% if(isPublic) { _%>true<%_ } else { _%>false<%_ } %>
+
+  default_branch: develop
+
+  allow_squash_merge: false
+
+  allow_merge_commit: false
+
+  allow_rebase_merge: true
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        dismissal_restrictions:
+          users: [ @esg-bot, @hassankhan ]
+          teams: []
+      required_status_checks:
+        strict: true
+        contexts: [ <% if(isPublic) { _%>codecov/project, continuous-integration/travis-ci<%_ } else { _%><%_ } %> ]
+      enforce_admins: true
+      restrictions:
+        users: [ @esg-bot, @hassankhan ]
+        teams: []
+  - name: develop
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        dismissal_restrictions:
+          users: [ @esg-bot, @hassankhan ]
+          teams: []
+      required_status_checks:
+        strict: true
+        contexts: [ <% if(isPublic) { _%>codecov/project, continuous-integration/travis-ci<%_ } else { _%><%_ } %> ]
+      enforce_admins: true
+      restrictions:
+        users: [ @esg-bot, @hassankhan ]
+        teams: []
