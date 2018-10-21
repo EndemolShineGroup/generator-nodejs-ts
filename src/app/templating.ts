@@ -22,7 +22,9 @@ export const Files: string[] = [
   'CHANGELOG.md',
   'CONTRIBUTING.md',
   '_gitignore',
+  // GitHub
   '_github/PULL_REQUEST_TEMPLATE.md',
+  'CODEOWNERS',
   // Git Hooks and Tools
   '_czrc',
   '_huskyrc',
