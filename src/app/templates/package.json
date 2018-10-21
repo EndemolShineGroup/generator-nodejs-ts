@@ -38,7 +38,7 @@
     <%_ if(isPublic) { _%>
     "@endemolshinegroup/cz-github": "^1",
     <%_ } else { _%>
-    "@endemolshinegroup/cz-jira-smart-commit": "^3",
+    "@endemolshinegroup/cz-jira-smart-commit": "^1",
     <%_ } _%>
     "@endemolshinegroup/prettier-config": "^1",
     "@endemolshinegroup/tslint-config": "^1",
