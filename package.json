@@ -45,7 +45,7 @@
     "@endemolshinegroup/tslint-config": "^1",
     "@semantic-release/changelog": "^3",
     "@semantic-release/git": "^7",
-    "@types/jest": "^23",
+    "@types/jest": "^23.3.7",
     "@types/node": "^10",
     "@types/rimraf": "^2.0.2",
     "@types/uuid": "^3.4.4",
