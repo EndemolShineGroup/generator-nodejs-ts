@@ -30,9 +30,9 @@ env:
     - GH_TOKEN=your-github-token
     # secure
     - NPM_TOKEN=your-npm-token
-    - export GIT_AUTHOR_NAME="EndemolShineGroupUser"
+    - export GIT_AUTHOR_NAME="esg-bot"
     - export GIT_AUTHOR_EMAIL="tech@endemolshine.com"
-    - export GIT_COMMITTER_NAME="EndemolShineGroupUser"
+    - export GIT_COMMITTER_NAME="esg-bot"
     - export GIT_COMMITTER_EMAIL="tech@endemolshine.com"
 
 jobs:
