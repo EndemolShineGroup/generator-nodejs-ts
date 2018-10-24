@@ -28,14 +28,14 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ @esg-bot, @hassankhan ]
+          users: [ esg-bot, hassankhan ]
           teams: []
       required_status_checks:
         strict: true
         contexts: [ <% if(isPublic) { _%>codecov/project, continuous-integration/travis-ci<%_ } else { _%><%_ } %> ]
       enforce_admins: true
       restrictions:
-        users: [ @esg-bot, @hassankhan ]
+        users: [ esg-bot, hassankhan ]
         teams: []
   - name: develop
     protection:
@@ -44,12 +44,12 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ @esg-bot, @hassankhan ]
+          users: [ esg-bot, hassankhan ]
           teams: []
       required_status_checks:
         strict: true
         contexts: [ <% if(isPublic) { _%>codecov/project, continuous-integration/travis-ci<%_ } else { _%><%_ } %> ]
       enforce_admins: true
       restrictions:
-        users: [ @esg-bot, @hassankhan ]
+        users: [ esg-bot, hassankhan ]
         teams: []

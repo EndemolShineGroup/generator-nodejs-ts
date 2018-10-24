@@ -42,14 +42,14 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ @esg-bot, @hassankhan, @sandyklark ]
+          users: [ esg-bot, hassankhan, sandyklark ]
           teams: []
       required_status_checks:
         strict: true
         contexts: [ codecov/project, continuous-integration/travis-ci ]
       enforce_admins: true
       restrictions:
-        users: [ @esg-bot, @hassankhan, @sandyklark ]
+        users: [ esg-bot, hassankhan, sandyklark ]
         teams: []
   - name: develop
     # https://developer.github.com/v3/repos/branches/#update-branch-protection
@@ -59,12 +59,12 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ @esg-bot, @hassankhan, @sandyklark ]
+          users: [ esg-bot, hassankhan, sandyklark ]
           teams: []
       required_status_checks:
         strict: true
         contexts: [ codecov/project, continuous-integration/travis-ci ]
       enforce_admins: true
       restrictions:
-        users: [ @esg-bot, @hassankhan, @sandyklark ]
+        users: [ esg-bot, hassankhan, sandyklark ]
         teams: []
