@@ -1,7 +1,7 @@
 {
   "name": "@endemolshinegroup/generator-nodejs-ts",
   "description": "A Yeoman project generator for Typescript projects",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "license": "MIT",
   "main": "generators/app/index.js",
   "types": "generators/app/index.d.ts",

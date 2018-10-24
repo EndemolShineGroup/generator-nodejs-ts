@@ -1,3 +1,22 @@
+# [1.4.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.2...v1.4.0) (2018-10-24)
+
+
+### Bug Fixes
+
+* **templating:** remove unnecessary title ([9e79895](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/9e79895))
+* **templating:** remove unused links ([88c12b5](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/88c12b5))
+* **templating:** use scoped jira smart commit ([5b39216](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/5b39216))
+* **templating:** use valid version of Commitizen JIRA adapter ([b26febb](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/b26febb)), closes [#21](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/21)
+
+
+### Features
+
+* **github:** add CODEOWNERS to template ([2b57704](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/2b57704)), closes [#18](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/18)
+* **github:** add configuration file for Probot Settings ([06109e7](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/06109e7)), closes [#19](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/19)
+* **npmrc:** move publishConfig from package.json to .npmrc ([799f14d](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/799f14d)), closes [#20](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/20)
+* **templating:** only generate coverage from full test suite runs ([c7939b6](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/c7939b6)), closes [#25](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/25)
+* **tslib:** add tslib and set required settings in tsconfig.json ([2e9acca](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/2e9acca)), closes [#31](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/31)
+
 ## [1.3.2](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.1...v1.3.2) (2018-10-16)
 
 
