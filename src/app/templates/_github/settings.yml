@@ -42,8 +42,8 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ esg-bot, hassankhan ]
-          teams: []
+          users: [ esg-bot ]
+          teams: [ open-source ]
       required_status_checks:
         strict: true
         contexts: [ <% if(isPublic) { %>
@@ -54,8 +54,8 @@ branches:
         ]
       enforce_admins: true
       restrictions:
-        users: [ esg-bot, hassankhan ]
-        teams: []
+        users: [ esg-bot ]
+        teams: [ open-source ]
   # https://developer.github.com/v3/repos/branches/#update-branch-protection
   - name: develop
     protection:
@@ -64,8 +64,8 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         dismissal_restrictions:
-          users: [ esg-bot, hassankhan ]
-          teams: []
+          users: [ esg-bot ]
+          teams: [ open-source ]
       required_status_checks:
         strict: true
         contexts: [ <% if(isPublic) { %>
@@ -76,5 +76,5 @@ branches:
         ]
       enforce_admins: true
       restrictions:
-        users: [ esg-bot, hassankhan ]
-        teams: []
+        users: [ esg-bot ]
+        teams: [ open-source ]
