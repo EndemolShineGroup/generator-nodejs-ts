@@ -34,8 +34,8 @@ repository:
   allow_rebase_merge: true
 
 branches:
+  # https://developer.github.com/v3/repos/branches/#update-branch-protection
   - name: master
-    # https://developer.github.com/v3/repos/branches/#update-branch-protection
     protection:
       required_pull_request_reviews:
         required_approving_review_count: 1
@@ -46,13 +46,18 @@ branches:
           teams: []
       required_status_checks:
         strict: true
-        contexts: [ codecov/project, continuous-integration/travis-ci ]
+        contexts: [
+          codeclimate,
+          codeclimate/diff-coverage,
+          codecov/project,
+          continuous-integration/travis-ci,
+        ]
       enforce_admins: true
       restrictions:
         users: [ esg-bot, hassankhan, sandyklark ]
         teams: []
+  # https://developer.github.com/v3/repos/branches/#update-branch-protection
   - name: develop
-    # https://developer.github.com/v3/repos/branches/#update-branch-protection
     protection:
       required_pull_request_reviews:
         required_approving_review_count: 1
@@ -63,7 +68,12 @@ branches:
           teams: []
       required_status_checks:
         strict: true
-        contexts: [ codecov/project, continuous-integration/travis-ci ]
+        contexts: [
+          codeclimate,
+          codeclimate/diff-coverage,
+          codecov/project,
+          continuous-integration/travis-ci,
+        ]
       enforce_admins: true
       restrictions:
         users: [ esg-bot, hassankhan, sandyklark ]
