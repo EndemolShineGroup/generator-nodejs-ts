@@ -52,7 +52,7 @@ branches:
           codecov/project,
           continuous-integration/travis-ci,
         ]
-      enforce_admins: true
+      enforce_admins: false
       restrictions:
         users: [ esg-bot ]
         teams: [ open-source ]
@@ -74,7 +74,7 @@ branches:
           codecov/project,
           continuous-integration/travis-ci,
         ]
-      enforce_admins: true
+      enforce_admins: false
       restrictions:
         users: [ esg-bot ]
         teams: [ open-source ]
