@@ -14,6 +14,9 @@ script:
   - yarn build
   - yarn test
 
+# Environment variables marked with `secure` should be securely encrypted as described at:
+# https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables
+
 notifications:
   slack:
     secure: "j/o39OROYDcvHRA50DbfJ5Q/HCnw2j5c2jnsxS9nCRxjq6F2vlqcmL34QyYZO83OAOTcBn3rcNx8VuQ0F0yK9QDwWnoPemUPhhhpKm09IQboSR+SEazbN0P7S4+tGzhNLqx3rgrKUzcNSI4M7ExJaydTZZSmymL/Yj3uvBvBByzsInju3/QwCoXY1aLniVv3wFFLo/FP9WyweS2YOxdBI18Onniwcs2ZBxjvPg93xTWCTfwMa/jrmOEB3mZFiAw8Pb5XQ/oDd/WFy3N/NEceRG08dVePB5DDc2okS6FNTy4SESfVgW/HimwH9idRkt1/489sFWZsBsTYwaAjcD+N4BgOW1PT+4EGfmaOjBWBxxBrrSKfFuC88mTv5xFJDJrShAQAapwwi0v70FSQvC9hyu/tOu5umflN9AbTvxv8tWj2pfAswNO4CecHgEWHmQQMIGIKistlNi4UIwVeHE286dY6obYDEpm8lqnHBLyCC7D7iSV9s5SCaU0sIVqs03AhUFYOgogg/xS/G4i1Cs3t5kWOxsxGUi/gt3LypG9FcJDYupWeOCDwWWjz5GTtM7z8y1NRvC3uUCA/moF0CIFfRhyWC73mRVZDuA9AJwUUYeRLm2hAfDbP2vE1DKt2tK/fptz6OLkISYSRkSIFx8yjPjvf2A0ywNoaBxKFuHIZt6c="
