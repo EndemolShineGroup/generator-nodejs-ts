@@ -1,10 +1,11 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
+import copyTemplates from '../lib/copyTemplates';
+import files from './files';
 import prompts from './prompts';
-import templating from './templating';
 
-export default class EndemolShineGroupGenerator extends Generator {
+export default class NodeJsTypeScriptGenerator extends Generator {
   public answers: Generator.Answers = {};
 
   constructor(args: string | string[], opts: {}) {
@@ -14,16 +15,25 @@ export default class EndemolShineGroupGenerator extends Generator {
 
   async initializing() {
     this.log('A few questions about your project...');
-    this.log('Note: Project Name will also be used for git urls');
+    this.log('Note: Project Name will also be used for Git URLs');
   }
 
   async prompting() {
     this.answers = await this.prompt(prompts);
+
+    this.composeWith(require.resolve('../build'), this.answers);
+    this.composeWith(require.resolve('../gitHooks'), {
+      ...this.answers,
+      addPrettier: true,
+      addTSLint: true,
+    });
+    this.composeWith(require.resolve('../github'), this.answers);
+    this.composeWith(require.resolve('../style'), this.answers);
     this.configureProjectRoot();
   }
 
   async writing() {
-    templating(this);
+    copyTemplates(this, files);
   }
 
   async install() {
@@ -38,7 +48,9 @@ export default class EndemolShineGroupGenerator extends Generator {
       .split(path.sep)
       .pop();
     if (targetDirName !== this.answers.projectName) {
-      this.destinationRoot(this.answers.projectName);
+      this.destinationRoot(
+        path.join(this.destinationRoot(), this.answers.projectName),
+      );
     }
   }
 }

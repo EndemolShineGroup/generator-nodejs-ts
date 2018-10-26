@@ -1,40 +1,34 @@
 import Generator from 'yeoman-generator';
 
-const filter = (input: string): string => {
-  return input.trim();
-};
+import filterAndTrim from '../lib/filterAndTrim';
 
 const prompts: Generator.Questions = [
   {
     default: '@endemolshinegroup',
+    filter: filterAndTrim,
     message: 'NPM scope: ',
     name: 'projectScope',
     type: 'input',
-
-    filter,
   },
   {
+    filter: filterAndTrim,
     message: 'Project Name: ',
     name: 'projectName',
     type: 'input',
-
-    filter,
   },
   {
     default: 'A NodeJS project written in TypeScript 🙏',
+    filter: filterAndTrim,
     message: 'Description: ',
     name: 'projectDescription',
     type: 'input',
-
-    filter,
   },
   {
     default: '0.0.1',
+    filter: filterAndTrim,
     message: 'Version: ',
     name: 'version',
     type: 'input',
-
-    filter,
   },
   {
     message: 'Is this a public package?',

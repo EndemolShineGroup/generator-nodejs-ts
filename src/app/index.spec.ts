@@ -6,12 +6,8 @@ import uuid from 'uuid/v4';
 import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
 
-import {
-  Files,
-  PrivateFiles,
-  PublicFiles,
-  replaceTemplatePrefix,
-} from './templating';
+import replaceTemplatePrefix from '../lib/replaceTemplatePrefix';
+import files from './files';
 
 const generate = (outputPath: string, answers: object) => {
   // @ts-ignore
@@ -119,10 +115,10 @@ describe('EndemolShineGroupGenerator', () => {
     });
 
     it('copies all files and public project files', function() {
-      let templateReplacedFiles = Files.map((filePath: string) =>
+      let templateReplacedFiles = files.common.map((filePath: string) =>
         replaceTemplatePrefix(filePath),
       );
-      let templateReplacedPublicFiles = PublicFiles.map((filePath: string) =>
+      let templateReplacedPublicFiles = files.public.map((filePath: string) =>
         replaceTemplatePrefix(filePath),
       );
 
@@ -163,10 +159,10 @@ describe('EndemolShineGroupGenerator', () => {
     });
 
     it('copies all files and private project files', function() {
-      let templateReplacedFiles = Files.map((filePath: string) =>
+      let templateReplacedFiles = files.common.map((filePath: string) =>
         replaceTemplatePrefix(filePath),
       );
-      let templateReplacedPrivateFiles = PrivateFiles.map((filePath: string) =>
+      let templateReplacedPrivateFiles = files.private.map((filePath: string) =>
         replaceTemplatePrefix(filePath),
       );
 
