@@ -1,6 +1,10 @@
 linters:
   "src/**/*.ts":
+    <%_ if(addTSLint) { _%>
     - "tslint --fix"                        # Run TSLint
+    <%_ } _%>
+    <%_ if(addPrettier) { _%>
     - "prettier --write"                    # Run Prettier
+    <%_ } _%>
     - "jest --bail --findRelatedTests"      # Run tests
     - "git add"
