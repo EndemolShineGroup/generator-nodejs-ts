@@ -6,17 +6,18 @@ import uuid from 'uuid/v4';
 import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
 
-const generate = (outputPath: string, answers: object) => {
+const generate = async (outputPath: string, options: {}) => {
   // @ts-ignore
-  return helpers
+  return await helpers
     .run(__dirname)
     .inDir(outputPath)
-    .withPrompts(answers);
+    .withOptions(options)
+    .toPromise();
 };
 
 describe('app:git-hooks', () => {
   const PROJECT_NAME = 'glasf-bist';
-  const answers: object = {
+  const options = {
     isPublic: true,
     projectName: PROJECT_NAME,
   };
@@ -25,7 +26,7 @@ describe('app:git-hooks', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, answers);
+      return generate(OUTPUT_PATH, options);
     });
 
     afterEach(() => {
@@ -62,6 +63,52 @@ describe('app:git-hooks', () => {
           PROJECT_NAME,
           '.github/ISSUE_TEMPLATE/feature_request.md',
         ),
+      );
+    });
+  });
+
+  describe('Generates a valid Probot Settings file for public projects', function() {
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+
+    beforeEach(async () => {
+      return generate(OUTPUT_PATH, options);
+    });
+
+    afterEach(() => {
+      rimraf.sync(OUTPUT_PATH);
+    });
+
+    it('generates a valid .github/settings.yml', () => {
+      [/private: false/g, /has_issues: true/g, /has_downloads: true/g].forEach(
+        (regex) => {
+          assert.fileContent(
+            path.join(OUTPUT_PATH, PROJECT_NAME, '.github', 'settings.yml'),
+            regex,
+          );
+        },
+      );
+    });
+  });
+
+  describe('Generates a valid Probot Settings file for private projects', () => {
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+
+    beforeEach(async () => {
+      return generate(OUTPUT_PATH, { ...options, isPublic: false });
+    });
+
+    afterEach(() => {
+      rimraf.sync(OUTPUT_PATH);
+    });
+
+    it('generates a valid .github/settings.yml', () => {
+      [/private: true/g, /has_issues: false/g, /has_downloads: false/g].forEach(
+        (regex) => {
+          assert.fileContent(
+            path.join(OUTPUT_PATH, PROJECT_NAME, '.github', 'settings.yml'),
+            regex,
+          );
+        },
       );
     });
   });

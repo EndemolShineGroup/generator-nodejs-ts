@@ -6,17 +6,18 @@ import uuid from 'uuid/v4';
 import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
 
-const generate = (outputPath: string, answers: object) => {
+const generate = async (outputPath: string, options: {}) => {
   // @ts-ignore
-  return helpers
+  return await helpers
     .run(__dirname)
     .inDir(outputPath)
-    .withPrompts(answers);
+    .withOptions(options)
+    .toPromise();
 };
 
 describe('app:git-hooks', () => {
   const PROJECT_NAME = 'glasf-bist';
-  const answers: object = {
+  const options = {
     addPrettier: true,
     addTSLint: true,
     projectName: PROJECT_NAME,
@@ -26,7 +27,7 @@ describe('app:git-hooks', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, answers);
+      return generate(OUTPUT_PATH, options);
     });
 
     afterEach(() => {

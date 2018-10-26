@@ -1,3 +1,6 @@
-import Generator from 'yeoman-generator';
+import BaseGenerator from 'yeoman-generator';
 
-export type FixedGenerator = Generator & { answers: Generator.Answers };
+export type FixedGenerator = BaseGenerator & {
+  answers?: BaseGenerator.Answers;
+  options?: BaseGenerator.Answers;
+};
