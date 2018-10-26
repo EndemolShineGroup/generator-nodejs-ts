@@ -1,6 +1,7 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
+import configureProjectRoot from '../lib/configureProjectRoot';
 import copyTemplates from '../lib/copyTemplates';
 import files from './files';
 import prompts from './prompts';
@@ -29,7 +30,7 @@ export default class NodeJsTypeScriptGenerator extends Generator {
     });
     this.composeWith(require.resolve('../github'), this.answers);
     this.composeWith(require.resolve('../style'), this.answers);
-    this.configureProjectRoot();
+    configureProjectRoot(this);
   }
 
   async writing() {
@@ -40,17 +41,6 @@ export default class NodeJsTypeScriptGenerator extends Generator {
     this.yarnInstall();
     if (this.answers.useGit) {
       this.spawnCommandSync('git', ['init', '--quiet']);
-    }
-  }
-
-  configureProjectRoot() {
-    const targetDirName = this.destinationRoot()
-      .split(path.sep)
-      .pop();
-    if (targetDirName !== this.answers.projectName) {
-      this.destinationRoot(
-        path.join(this.destinationRoot(), this.answers.projectName),
-      );
     }
   }
 }
