@@ -1,6 +1,7 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
+import configureProjectRoot from '../lib/configureProjectRoot';
 import copyTemplates from '../lib/copyTemplates';
 import files from './files';
 
@@ -11,7 +12,7 @@ export = class BuildGenerator extends Generator {
     super(args, options);
     this.options = options;
     this.sourceRoot(path.join(__dirname, 'templates'));
-    this.configureProjectRoot();
+    configureProjectRoot(this);
 
     this.option('projectName', {
       description: 'Project Name: ',
@@ -26,15 +27,4 @@ export = class BuildGenerator extends Generator {
   writing() {
     copyTemplates(this, files);
   }
-
-  configureProjectRoot = () => {
-    const targetDirName = this.destinationRoot()
-      .split(path.sep)
-      .pop();
-    if (targetDirName !== this.options.projectName) {
-      this.destinationRoot(
-        path.join(this.destinationRoot(), this.options.projectName),
-      );
-    }
-  };
 };
