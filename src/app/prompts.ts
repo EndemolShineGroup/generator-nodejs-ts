@@ -21,7 +21,7 @@ const prompts: Generator.Questions = [
     filter,
   },
   {
-    default: 'sick project...',
+    default: 'A NodeJS project written in TypeScript 🙏',
     message: 'Description: ',
     name: 'projectDescription',
     type: 'input',

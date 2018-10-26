@@ -15,8 +15,7 @@
     "target":"ES2015"
   },
   "include": [
-    "src",
-    "types"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
