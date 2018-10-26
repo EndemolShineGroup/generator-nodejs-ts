@@ -3,36 +3,38 @@ import Generator from 'yeoman-generator';
 
 import copyTemplates from '../lib/copyTemplates';
 import files from './files';
-import prompts from './prompts';
 
-export = class GitHooksGenerator extends Generator {
-  public answers: Generator.Answers = {};
+export = class BuildGenerator extends Generator {
+  public options: Generator.Answers = {};
 
-  constructor(args: string | string[], options = {}) {
+  constructor(args: string | string[], options: {}) {
     super(args, options);
+    this.options = options;
     this.sourceRoot(path.join(__dirname, 'templates'));
-  }
-
-  async prompting() {
-    this.answers = {
-      ...this.options,
-      ...(await this.prompt(prompts)),
-    };
     this.configureProjectRoot();
+
+    this.option('projectName', {
+      description: 'Project Name: ',
+      type: String,
+    });
+    this.option('isPublic', {
+      description: 'Is this a public package?',
+      type: Boolean,
+    });
   }
 
-  async writing() {
+  writing() {
     copyTemplates(this, files);
   }
 
-  configureProjectRoot() {
+  configureProjectRoot = () => {
     const targetDirName = this.destinationRoot()
       .split(path.sep)
       .pop();
-    if (targetDirName !== this.answers.projectName) {
+    if (targetDirName !== this.options.projectName) {
       this.destinationRoot(
-        path.join(this.destinationRoot(), this.answers.projectName),
+        path.join(this.destinationRoot(), this.options.projectName),
       );
     }
-  }
+  };
 };

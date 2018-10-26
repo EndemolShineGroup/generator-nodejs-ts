@@ -10,17 +10,22 @@ export interface FilesToCopy {
 export default (gen: FixedGenerator, files: FilesToCopy) => {
   let OutputFiles: string[] = [...files.common];
 
+  const options: { [key: string]: any } = {
+    ...gen.answers,
+    ...gen.options,
+  };
+
   const copyTemplate = (path: string) => {
     let replacedPath = replaceTemplatePrefix(path);
 
     gen.fs.copyTpl(
       gen.templatePath(path),
       gen.destinationPath(replacedPath),
-      gen.answers,
+      options,
     );
   };
 
-  if (gen.answers.isPublic) {
+  if (options.isPublic) {
     OutputFiles.push(...files.public);
   } else {
     OutputFiles.push(...files.private);
