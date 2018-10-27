@@ -22,6 +22,8 @@ export default class NodeJsTypeScriptGenerator extends Generator {
   async prompting() {
     this.answers = await this.prompt(prompts);
 
+    this.composeWith(require.resolve('../node'), this.answers);
+    this.composeWith(require.resolve('../typescript'), this.answers);
     this.composeWith(require.resolve('../build'), this.answers);
     this.composeWith(require.resolve('../gitHooks'), {
       ...this.answers,

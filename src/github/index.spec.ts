@@ -15,7 +15,7 @@ const generate = async (outputPath: string, options: {}) => {
     .toPromise();
 };
 
-describe('app:git-hooks', () => {
+describe('app:github', () => {
   const PROJECT_NAME = 'glasf-bist';
   const options = {
     isPublic: true,

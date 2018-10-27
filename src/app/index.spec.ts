@@ -17,7 +17,7 @@ const generate = (outputPath: string, answers: object) => {
     .withPrompts(answers);
 };
 
-describe('EndemolShineGroupGenerator', () => {
+describe('app', () => {
   const PROJECT_NAME = 'glasf-bist';
   const answers: object = {
     projectDescription: 'glaf as a bist in January',
