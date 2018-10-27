@@ -47,7 +47,6 @@ branches:
       required_status_checks:
         strict: true
         contexts: [
-          codeclimate,
           codeclimate/diff-coverage,
           codecov/project,
           continuous-integration/travis-ci,
@@ -69,7 +68,6 @@ branches:
       required_status_checks:
         strict: true
         contexts: [
-          codeclimate,
           codeclimate/diff-coverage,
           codecov/project,
           continuous-integration/travis-ci,
