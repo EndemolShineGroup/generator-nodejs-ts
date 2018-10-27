@@ -23,7 +23,7 @@ describe('EndemolShineGroupGenerator', () => {
     projectDescription: 'glaf as a bist in January',
     projectName: PROJECT_NAME,
     projectScope: '@endemolshinegroup',
-    version: '0.0.13',
+    version: '0.0.1',
   };
 
   describe('Generates a project from a folder that does not have the same name as the project', () => {
@@ -35,13 +35,6 @@ describe('EndemolShineGroupGenerator', () => {
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('correctly inserts prompt answers into package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /"name":\sPROJECT_NAME|"version":\s"0.0.13"|"description":\s"glaf as a bist in January"/g,
-      );
     });
 
     it('folder matching project name exists and is target directory', () => {
@@ -62,13 +55,6 @@ describe('EndemolShineGroupGenerator', () => {
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('correctly inserts prompt answers into package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /"name":\sPROJECT_NAME|"version":\s"0.0.13"|"description":\s"glaf as a bist in January"/g,
-      );
     });
 
     it('folder matching project name exists and is target directory', () => {
@@ -124,13 +110,6 @@ describe('EndemolShineGroupGenerator', () => {
 
       assert.file([...templateReplacedFiles, ...templateReplacedPublicFiles]);
     });
-
-    it('generates an .npmrc with access=public', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, '.npmrc'),
-        /access=public/g,
-      );
-    });
   });
 
   describe('Generates a private project correctly', () => {
@@ -156,13 +135,6 @@ describe('EndemolShineGroupGenerator', () => {
       );
 
       assert.file([...templateReplacedFiles, ...templateReplacedPrivateFiles]);
-    });
-
-    it('generates an .npmrc with access=restricted', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, '.npmrc'),
-        /access=restricted/g,
-      );
     });
   });
 });
