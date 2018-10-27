@@ -4,15 +4,8 @@ import rimraf from 'rimraf';
 import uuid from 'uuid/v4';
 // @ts-ignore
 import assert from 'yeoman-assert';
-import helpers from 'yeoman-test';
 
-const generate = (outputPath: string, answers: object) => {
-  // @ts-ignore
-  return helpers
-    .run(__dirname)
-    .inDir(outputPath)
-    .withPrompts(answers);
-};
+import { generateWithPrompts } from '../setupTests';
 
 describe('app', () => {
   const PROJECT_NAME = 'glasf-bist';
@@ -27,7 +20,7 @@ describe('app', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, answers);
+      return generateWithPrompts(__dirname, OUTPUT_PATH, answers);
     });
 
     afterEach(() => {
@@ -47,7 +40,7 @@ describe('app', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, answers);
+      return generateWithPrompts(__dirname, OUTPUT_PATH, answers);
     });
 
     afterEach(() => {
@@ -67,7 +60,7 @@ describe('app', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, {
+      return generateWithPrompts(__dirname, OUTPUT_PATH, {
         ...answers,
         isPublic: true,
         useGit: false,

@@ -4,16 +4,8 @@ import rimraf from 'rimraf';
 import uuid from 'uuid/v4';
 // @ts-ignore
 import assert from 'yeoman-assert';
-import helpers from 'yeoman-test';
 
-const generate = async (outputPath: string, options: {}) => {
-  // @ts-ignore
-  return await helpers
-    .run(__dirname)
-    .inDir(outputPath)
-    .withOptions(options)
-    .toPromise();
-};
+import { generateWithOptions } from '../setupTests';
 
 describe('app:services', () => {
   const PROJECT_NAME = 'glasf-bist';
@@ -26,7 +18,7 @@ describe('app:services', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, options);
+      return generateWithOptions(__dirname, OUTPUT_PATH, options);
     });
 
     afterEach(() => {
@@ -42,7 +34,7 @@ describe('app:services', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, options);
+      return generateWithOptions(__dirname, OUTPUT_PATH, options);
     });
 
     afterEach(() => {
