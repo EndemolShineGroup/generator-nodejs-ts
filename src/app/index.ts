@@ -3,7 +3,7 @@ import Generator from 'yeoman-generator';
 
 import configureProjectRoot from '../lib/configureProjectRoot';
 import copyTemplates from '../lib/copyTemplates';
-import files from './files';
+// import files from './files';
 import prompts from './prompts';
 
 export default class NodeJsTypeScriptGenerator extends Generator {
@@ -22,21 +22,19 @@ export default class NodeJsTypeScriptGenerator extends Generator {
   async prompting() {
     this.answers = await this.prompt(prompts);
 
+    this.composeWith(require.resolve('../repo'), this.answers);
     this.composeWith(require.resolve('../node'), this.answers);
     this.composeWith(require.resolve('../typescript'), this.answers);
     this.composeWith(require.resolve('../build'), this.answers);
-    this.composeWith(require.resolve('../gitHooks'), {
+    this.composeWith(require.resolve('../process'), {
       ...this.answers,
       addPrettier: true,
       addTSLint: true,
     });
     this.composeWith(require.resolve('../github'), this.answers);
     this.composeWith(require.resolve('../style'), this.answers);
+    this.composeWith(require.resolve('../services'), this.answers);
     configureProjectRoot(this);
-  }
-
-  async writing() {
-    copyTemplates(this, files);
   }
 
   async install() {

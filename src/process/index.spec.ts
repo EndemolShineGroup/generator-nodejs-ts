@@ -15,7 +15,7 @@ const generate = async (outputPath: string, options: {}) => {
     .toPromise();
 };
 
-describe('app:git-hooks', () => {
+describe('app:process', () => {
   const PROJECT_NAME = 'glasf-bist';
   const options = {
     addPrettier: true,

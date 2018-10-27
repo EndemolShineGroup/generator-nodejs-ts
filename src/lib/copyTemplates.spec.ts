@@ -1,4 +1,4 @@
-import files from '../gitHooks/files';
+import files from '../process/files';
 import copyTemplates from './copyTemplates';
 import { FixedGenerator } from './types';
 

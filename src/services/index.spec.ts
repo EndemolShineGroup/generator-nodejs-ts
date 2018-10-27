@@ -15,14 +15,14 @@ const generate = async (outputPath: string, options: {}) => {
     .toPromise();
 };
 
-describe('app:build', () => {
+describe('app:services', () => {
   const PROJECT_NAME = 'glasf-bist';
   const options = {
     isPublic: true,
     projectName: PROJECT_NAME,
   };
 
-  describe('Generates Travis CI configuration for a public project', () => {
+  describe('Generates CodeClimate project files for a public project', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -33,24 +33,24 @@ describe('app:build', () => {
       rimraf.sync(OUTPUT_PATH);
     });
 
-    it('copies .travis.yml', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.travis.yml'));
+    it('copies files correctly', () => {
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.codeclimate.yml'));
     });
   });
 
-  describe('Generates CodeBuild configuration for a private project', () => {
+  describe('Generates CodeCov project files for a public project', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
-      return generate(OUTPUT_PATH, { ...options, isPublic: false });
+      return generate(OUTPUT_PATH, options);
     });
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
     });
 
-    it('copies buildspec.yml', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'buildspec.yml'));
+    it('copies files correctly', () => {
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'codecov.yml'));
     });
   });
 });
