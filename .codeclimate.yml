@@ -17,3 +17,4 @@ exclude_patterns:
   - "**/*.spec.ts"
   - "**/*.integ.ts"
   - "**/templates/"                                 # Exclude template files for code climate accuracy
+  - "setupTests.ts"                                 # Exclude test setup files

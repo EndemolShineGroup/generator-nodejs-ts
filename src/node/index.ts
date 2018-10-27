@@ -1,18 +1,10 @@
-import path from 'path';
-import Generator from 'yeoman-generator';
-
-import configureProjectRoot from '../lib/configureProjectRoot';
-import copyTemplates from '../lib/copyTemplates';
+import AbstractGenerator from '../lib/AbstractGenerator';
 import files from './files';
 
-export = class NodeGenerator extends Generator {
-  public options: Generator.Answers = {};
-
+export = class NodeGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options);
-    this.options = options;
-    this.sourceRoot(path.join(__dirname, 'templates'));
-    configureProjectRoot(this);
+    this.initWithOptions(__dirname, options);
 
     this.option('projectScope', {
       description: 'NPM scope: ',
@@ -37,6 +29,6 @@ export = class NodeGenerator extends Generator {
   }
 
   writing() {
-    copyTemplates(this, files);
+    this.copyTemplates(files);
   }
 };

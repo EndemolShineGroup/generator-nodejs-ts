@@ -23,6 +23,7 @@ module.exports = {
   //   }
   // },
   modulePathIgnorePatterns: [
+    'setupTests.ts',
     '.*/templates'
   ],
   moduleDirectories: [

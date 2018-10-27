@@ -1,6 +1,5 @@
-import files from '../process/files';
+import AbstractGenerator from './AbstractGenerator';
 import copyTemplates from './copyTemplates';
-import { FixedGenerator } from './types';
 
 const genMock = ({
   answers: {
@@ -14,7 +13,7 @@ const genMock = ({
 
   destinationPath: jest.fn(),
   templatePath: jest.fn(),
-} as unknown) as FixedGenerator;
+} as unknown) as AbstractGenerator;
 
 describe('#copyTemplates', () => {
   it('copies templates files', () => {

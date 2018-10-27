@@ -1,8 +1,8 @@
 import path from 'path';
 
-import { FixedGenerator } from './types';
+import AbstractGenerator from './AbstractGenerator';
 
-export default (gen: FixedGenerator) => {
+export default (gen: AbstractGenerator) => {
   const targetDirName = gen
     .destinationRoot()
     .split(path.sep)

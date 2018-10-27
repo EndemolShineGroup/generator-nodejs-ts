@@ -1,5 +1,5 @@
+import AbstractGenerator from './AbstractGenerator';
 import replaceTemplatePrefix from './replaceTemplatePrefix';
-import { FixedGenerator } from './types';
 
 export interface FilesToCopy {
   common: string[];
@@ -7,7 +7,7 @@ export interface FilesToCopy {
   private: string[];
 }
 
-export default (gen: FixedGenerator, files: FilesToCopy) => {
+export default (gen: AbstractGenerator, files: FilesToCopy) => {
   let OutputFiles: string[] = [...files.common];
 
   const options: { [key: string]: any } = {

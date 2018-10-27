@@ -4,7 +4,6 @@ import rimraf from 'rimraf';
 import uuid from 'uuid/v4';
 // @ts-ignore
 import assert from 'yeoman-assert';
-import helpers from 'yeoman-test';
 
 import { generateWithOptions } from '../setupTests';
 

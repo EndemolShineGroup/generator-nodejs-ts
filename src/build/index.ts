@@ -1,18 +1,11 @@
-import path from 'path';
-import Generator from 'yeoman-generator';
-
-import configureProjectRoot from '../lib/configureProjectRoot';
+import AbstractGenerator from '../lib/AbstractGenerator';
 import copyTemplates from '../lib/copyTemplates';
 import files from './files';
 
-export = class BuildGenerator extends Generator {
-  public options: Generator.Answers = {};
-
+export = class BuildGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options);
-    this.options = options;
-    this.sourceRoot(path.join(__dirname, 'templates'));
-    configureProjectRoot(this);
+    this.initWithOptions(__dirname, options);
 
     this.option('projectName', {
       description: 'Project Name: ',
@@ -25,6 +18,6 @@ export = class BuildGenerator extends Generator {
   }
 
   writing() {
-    copyTemplates(this, files);
+    this.copyTemplates(files);
   }
 };

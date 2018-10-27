@@ -1,5 +1,5 @@
+import AbstractGenerator from './AbstractGenerator';
 import configureProjectRoot from './configureProjectRoot';
-import { FixedGenerator } from './types';
 
 const genMock = ({
   options: {
@@ -9,7 +9,7 @@ const genMock = ({
   destinationRoot: jest.fn(() => {
     return process.cwd();
   }),
-} as unknown) as FixedGenerator;
+} as unknown) as AbstractGenerator;
 
 describe('#configureProjectRoot', () => {
   it('copies templates files', () => {

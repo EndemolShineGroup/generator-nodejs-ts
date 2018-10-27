@@ -1,9 +1,8 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
+import AbstractGenerator from '../lib/AbstractGenerator';
 import configureProjectRoot from '../lib/configureProjectRoot';
-import copyTemplates from '../lib/copyTemplates';
-// import files from './files';
 import prompts from './prompts';
 
 export default class NodeJsTypeScriptGenerator extends Generator {
@@ -34,7 +33,7 @@ export default class NodeJsTypeScriptGenerator extends Generator {
     this.composeWith(require.resolve('../github'), this.answers);
     this.composeWith(require.resolve('../style'), this.answers);
     this.composeWith(require.resolve('../services'), this.answers);
-    configureProjectRoot(this);
+    configureProjectRoot((this as unknown) as AbstractGenerator);
   }
 
   async install() {
