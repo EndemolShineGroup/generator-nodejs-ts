@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.5.0...v1.6.0) (2018-10-27)
+
+
+### Features
+
+* **node:** move Node content to subgenerator ([ce60c23](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/ce60c23))
+
 # [1.5.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.4.0...v1.5.0) (2018-10-27)
 
 
