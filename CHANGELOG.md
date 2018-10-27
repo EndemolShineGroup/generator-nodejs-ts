@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.4.0...v1.5.0) (2018-10-27)
+
+
+### Bug Fixes
+
+* **probot:** remove CodeClimate status check ([cae44fc](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/cae44fc))
+
+
+### Features
+
+* use subgenerators ([6726358](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/6726358)), closes [#12](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/12)
+
 # [1.4.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.3.2...v1.4.0) (2018-10-24)
 
 
