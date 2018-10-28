@@ -22,6 +22,7 @@
     "**/templates/*",
     "**/*.spec.ts",
     "**/*.integ.ts",
-    "**/__fixtures__/*.*"
+    "**/__fixtures__/*.*",
+    "src/setupTests.ts"
   ]
 }
