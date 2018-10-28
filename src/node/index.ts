@@ -3,8 +3,7 @@ import files from './files';
 
 export = class NodeGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
-    super(args, options);
-    this.initWithOptions(__dirname, options);
+    super(args, options, __dirname);
 
     this.option('projectScope', {
       description: 'NPM scope: ',

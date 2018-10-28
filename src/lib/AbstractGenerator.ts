@@ -15,6 +15,11 @@ export default abstract class AbstractGenerator extends Generator {
   public answers: Generator.Answers = {};
   public options: Generator.Answers = {};
 
+  constructor(args: string | string[], options: {}, generatorPath: string) {
+    super(args, options);
+    this.initWithOptions(generatorPath, options);
+  }
+
   initWithOptions = (generatorPath: string, options: Generator.Answers) => {
     this.options = options;
     this.sourceRoot(path.join(generatorPath, 'templates'));

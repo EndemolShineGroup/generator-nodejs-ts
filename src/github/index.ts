@@ -4,8 +4,7 @@ import files from './files';
 
 export = class GitHubGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
-    super(args, options);
-    this.initWithOptions(__dirname, options);
+    super(args, options, __dirname);
 
     this.option('projectName', {
       description: 'Project Name: ',
