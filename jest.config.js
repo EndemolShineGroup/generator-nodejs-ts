@@ -4,8 +4,8 @@ module.exports = {
   preset: 'ts-jest',
   collectCoverage: false,
   coveragePathIgnorePatterns: [
+    '/src/setupTests.ts',
     '/node_modules/',
-    '/tests/',
     '/__fixtures__/',
   ],
   globals: {
@@ -13,17 +13,15 @@ module.exports = {
       tsConfig: "tsconfig.test.json",
     },
   },
-  // @TODO Uncomment the following lines once test coverage has reached an acceptable threshold
-  // 'coverageThreshold': {
-  //   'global': {
-  //     'branches': 90,
-  //     'functions': 95,
-  //     'lines': 95,
-  //     'statements': 95
-  //   }
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 95,
+      lines: 95,
+      statements: 95,
+    },
+  },
   modulePathIgnorePatterns: [
-    'setupTests.ts',
     '.*/templates'
   ],
   moduleDirectories: [
