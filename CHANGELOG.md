@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.6.0...v1.7.0) (2018-10-28)
+
+
+### Bug Fixes
+
+* **tests:** ignore test setup file and enable coverage thresholds ([31b8760](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/31b8760))
+
+
+### Features
+
+* move all content into subgenerators ([284761a](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/284761a))
+
 # [1.6.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.5.0...v1.6.0) (2018-10-27)
 
 
