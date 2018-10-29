@@ -55,7 +55,7 @@
     "commitizen": "^3.0.2",
     "husky": "^1",
     "jest": "^23",
-    "lint-staged": "^7",
+    "lint-staged": "^8.0.0",
     "prettier": "^1",
     "rimraf": "^2",
     "semantic-release": "^15",
