@@ -9,6 +9,7 @@
     ],
     "module": "commonjs",
     "outDir": "./dist",
+    "resolveJsonModule": true,
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
