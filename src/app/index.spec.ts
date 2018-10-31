@@ -32,7 +32,7 @@ describe('app', () => {
     });
 
     it('adds .git folder to project', () => {
-      assert.file('.git');
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.git'));
     });
   });
 

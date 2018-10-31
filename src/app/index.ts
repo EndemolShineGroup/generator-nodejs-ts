@@ -31,7 +31,11 @@ export default class NodeJsTypeScriptGenerator extends Generator {
       addTSLint: true,
     });
     this.composeWith(require.resolve('../github'), this.answers);
-    this.composeWith(require.resolve('../style'), this.answers);
+    this.composeWith(require.resolve('../style'), {
+      ...this.answers,
+      addPrettier: true,
+      addTSLint: true,
+    });
     this.composeWith(require.resolve('../services'), this.answers);
     configureProjectRoot((this as unknown) as AbstractGenerator);
   }

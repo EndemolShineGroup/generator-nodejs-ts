@@ -17,7 +17,7 @@ export = class TypeScriptGenerator extends AbstractGenerator {
     });
   }
 
-  writing() {
+  async writing() {
     if (this.options.generateExamples) {
       this.copyTemplates(files);
       return;
@@ -30,5 +30,32 @@ export = class TypeScriptGenerator extends AbstractGenerator {
       private: files.private.filter(filter),
       public: files.public.filter(filter),
     });
+  }
+
+  async install() {
+    const pkgJson = {
+      dependencies: {
+        tslib: '^1.9.3',
+      },
+      devDependencies: {
+        '@types/jest': '^23',
+        '@types/node': '^10',
+        rimraf: '^2',
+        'ts-jest': '^23',
+        typedoc: '^0.13.0',
+        typescript: '^3',
+      },
+      scripts: {
+        build: 'rimraf dist/ && tsc',
+        'build:docs':
+          'rimraf docs/api && typedoc --out docs/api --target es6 --theme minimal --mode file src',
+        'build:watch': 'tsc --watch',
+      },
+      types: 'dist/index.d.ts',
+    };
+
+    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+
+    this.yarnInstall();
   }
 };

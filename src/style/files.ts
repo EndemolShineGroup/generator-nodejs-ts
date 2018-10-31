@@ -1,8 +1,8 @@
 export default {
   common: [
-    '_editorconfig',
     '_czrc',
     '_commitlintrc.js',
+    '_editorconfig',
     'tslint.json',
     'prettier.config.js',
   ],

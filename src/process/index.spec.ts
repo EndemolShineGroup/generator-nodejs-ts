@@ -13,6 +13,7 @@ describe('app:process', () => {
     addPrettier: true,
     addTSLint: true,
     projectName: PROJECT_NAME,
+    skipInstall: true,
   };
 
   describe('Generates Husky and Lint-Staged configuration files', () => {
@@ -29,6 +30,23 @@ describe('app:process', () => {
     it('copies all files', () => {
       assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.huskyrc'));
       assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.lintstagedrc.yml'));
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.releaserc'));
+    });
+
+    it('adds dependencies to package.json', () => {
+      ['husky', 'lint-staged', 'semantic-release'].forEach((dependency) => {
+        assert.fileContent(
+          path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
+          new RegExp(dependency, 'g'),
+        );
+      });
+    });
+
+    it('adds scripts to package.json', () => {
+      assert.fileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
+        /"semantic-release":\s"semantic-release"/g,
+      );
     });
   });
 });

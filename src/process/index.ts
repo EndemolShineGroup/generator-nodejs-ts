@@ -22,4 +22,23 @@ export = class GitHooksGenerator extends AbstractGenerator {
   async writing() {
     this.copyTemplates(files);
   }
+
+  async install() {
+    const pkgJson = {
+      devDependencies: {
+        '@semantic-release/changelog': '^3',
+        '@semantic-release/git': '^7',
+        husky: '^1',
+        'lint-staged': '^8',
+        'semantic-release': '^15',
+      },
+      scripts: {
+        'semantic-release': 'semantic-release',
+      },
+    };
+
+    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+
+    this.yarnInstall();
+  }
 };
