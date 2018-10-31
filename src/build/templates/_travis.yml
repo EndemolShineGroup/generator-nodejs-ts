@@ -19,13 +19,16 @@ script:
 
 notifications:
   slack:
-    # secure
-    your-slack-organisation:your-slack-api-token
+    rooms:
+      # secure
+      your-slack-organisation:your-slack-api-token
+    on_success: change
+    on_failure: always
 
 env:
   global:
     # secure
-    - CC=your-code-climate-token
+    - CC_TEST_REPORTER_ID=your-code-climate-token
     # secure
     - GH_TOKEN=your-github-token
     # secure
