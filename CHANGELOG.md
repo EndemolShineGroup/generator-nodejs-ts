@@ -1,3 +1,16 @@
+# [1.8.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.7.0...v1.8.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* **scripts:** remove invalid subgenerator name ([25ce4f9](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/25ce4f9))
+* **subgenerators:** move dependencies to related generator ([c92d2b0](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/c92d2b0))
+
+
+### Features
+
+* **typescript:** add options to subgenerator ([fc1f54e](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/fc1f54e))
+
 # [1.7.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.6.0...v1.7.0) (2018-10-28)
 
 
