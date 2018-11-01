@@ -49,9 +49,9 @@ describe('app:typescript', () => {
 
     it('adds scripts to package.json', () => {
       [
-        `"build": "rimraf dist/ && tsc"`,
+        `"prebuild": "rimraf dist/"`,
+        `"build": "tsc"`,
         `"build:docs": "rimraf docs/api && typedoc --out docs/api --target es6 --theme minimal --mode file src"`,
-        `"build:watch": "tsc --watch"`,
       ].forEach((script) => {
         assert.fileContent(
           path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),

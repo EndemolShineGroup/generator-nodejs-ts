@@ -1,5 +1,5 @@
 export default {
   common: ['_huskyrc', '_lintstagedrc.yml', '_releaserc'],
-  private: [],
+  private: ['gitauthorcheck.config.js'],
   public: [],
 };

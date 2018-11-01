@@ -14,7 +14,7 @@ describe('app:github', () => {
     projectName: PROJECT_NAME,
   };
 
-  describe('Generates GitHub files', () => {
+  describe('Generates GitHub configuration files', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -26,40 +26,20 @@ describe('app:github', () => {
     });
 
     it('copies all files', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'CODEOWNERS'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.github/settings.yml'));
-      assert.file(
-        path.join(
-          OUTPUT_PATH,
-          PROJECT_NAME,
-          '.github/PULL_REQUEST_TEMPLATE.md',
-        ),
-      );
-      assert.file(
-        path.join(
-          OUTPUT_PATH,
-          PROJECT_NAME,
-          '.github/ISSUE_TEMPLATE/bug_report.md',
-        ),
-      );
-      assert.file(
-        path.join(
-          OUTPUT_PATH,
-          PROJECT_NAME,
-          '.github/ISSUE_TEMPLATE/documentation_improvement.md',
-        ),
-      );
-      assert.file(
-        path.join(
-          OUTPUT_PATH,
-          PROJECT_NAME,
-          '.github/ISSUE_TEMPLATE/feature_request.md',
-        ),
-      );
+      [
+        'CODEOWNERS',
+        '.github/settings.yml',
+        '.github/PULL_REQUEST_TEMPLATE.md',
+        '.github/ISSUE_TEMPLATE/bug_report.md',
+        '.github/ISSUE_TEMPLATE/documentation_improvement.md',
+        '.github/ISSUE_TEMPLATE/feature_request.md',
+      ].forEach((fileName) => {
+        assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, fileName));
+      });
     });
   });
 
-  describe('Generates a valid Probot Settings file for public projects', () => {
+  describe('Generates a public project correctly', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -82,7 +62,7 @@ describe('app:github', () => {
     });
   });
 
-  describe('Generates a valid Probot Settings file for private projects', () => {
+  describe('Generates a private project correctly', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {

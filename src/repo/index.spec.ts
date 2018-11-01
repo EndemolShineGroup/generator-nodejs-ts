@@ -17,7 +17,7 @@ describe('app:node', () => {
     version: '0.0.1',
   };
 
-  describe('Generates base project files for a repository', () => {
+  describe('Generates base repository files', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -29,11 +29,15 @@ describe('app:node', () => {
     });
 
     it('copies files correctly', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.gitignore'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'CHANGELOG.md'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'CONTRIBUTING.md'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'LICENSE'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'README.md'));
+      [
+        '.gitignore',
+        'CHANGELOG.md',
+        'CONTRIBUTING.md',
+        'LICENSE',
+        'README.md',
+      ].forEach((fileName) => {
+        assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, fileName));
+      });
       assert.fileContent(
         path.join(OUTPUT_PATH, PROJECT_NAME, 'CONTRIBUTING.md'),
         new RegExp(PROJECT_NAME, 'g'),

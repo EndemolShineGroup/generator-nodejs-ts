@@ -27,11 +27,15 @@ describe('app:style', () => {
     });
 
     it('copies all files', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.czrc'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.commitlintrc.js'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.editorconfig'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'prettier.config.js'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'tslint.json'));
+      [
+        '.czrc',
+        '.commitlintrc.js',
+        '.editorconfig',
+        'prettier.config.js',
+        'tslint.json',
+      ].forEach((fileName) => {
+        assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, fileName));
+      });
     });
 
     it('adds dependencies to package.json', () => {
@@ -40,6 +44,17 @@ describe('app:style', () => {
           assert.fileContent(
             path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
             new RegExp(dependency, 'g'),
+          );
+        },
+      );
+    });
+
+    it('adds scripts to package.json', () => {
+      [/"commit":\s"git-cz"/g, /"lint":\s"tslint -p tsconfig.json/g].forEach(
+        (regex) => {
+          assert.fileContent(
+            path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
+            regex,
           );
         },
       );
@@ -72,17 +87,6 @@ describe('app:style', () => {
       assert.noFileContent(
         path.join(OUTPUT_PATH, PROJECT_NAME, '.czrc'),
         /"path":\s"@endemolshinegroup\/cz-jira-smart-commit"/g,
-      );
-    });
-
-    it('adds scripts to package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /"commit":\s"git-cz"/g,
-      );
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /"lint":\s"tslint -p tsconfig.json/g,
       );
     });
   });

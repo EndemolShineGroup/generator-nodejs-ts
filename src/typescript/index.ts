@@ -46,10 +46,11 @@ export = class TypeScriptGenerator extends AbstractGenerator {
         typescript: '^3',
       },
       scripts: {
-        build: 'rimraf dist/ && tsc',
+        prebuild: 'rimraf dist/',
+
+        build: 'tsc',
         'build:docs':
           'rimraf docs/api && typedoc --out docs/api --target es6 --theme minimal --mode file src',
-        'build:watch': 'tsc --watch',
       },
       types: 'dist/index.d.ts',
     };

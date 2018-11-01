@@ -14,7 +14,7 @@ describe('app:services', () => {
     projectName: PROJECT_NAME,
   };
 
-  describe('Generates CodeClimate project files for a public project', () => {
+  describe('Generates services configuration files', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -26,23 +26,9 @@ describe('app:services', () => {
     });
 
     it('copies files correctly', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.codeclimate.yml'));
-    });
-  });
-
-  describe('Generates CodeCov project files for a public project', () => {
-    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
-
-    beforeEach(async () => {
-      return generateWithOptions(__dirname, OUTPUT_PATH, options);
-    });
-
-    afterEach(() => {
-      rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('copies files correctly', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'codecov.yml'));
+      ['.codeclimate.yml', 'codecov.yml'].forEach((fileName) => {
+        assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, fileName));
+      });
     });
   });
 });

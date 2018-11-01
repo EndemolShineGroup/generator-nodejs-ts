@@ -17,7 +17,7 @@ describe('app:process', () => {
     skipInstall: true,
   };
 
-  describe('Generates Husky and Lint-Staged configuration files', () => {
+  describe('Generates process configuration files', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -29,9 +29,9 @@ describe('app:process', () => {
     });
 
     it('copies all files', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.huskyrc'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.lintstagedrc.yml'));
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.releaserc'));
+      ['.huskyrc', '.lintstagedrc.yml', '.releaserc'].forEach((fileName) => {
+        assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, fileName));
+      });
     });
 
     it('adds dependencies to package.json', () => {
@@ -73,7 +73,9 @@ describe('app:process', () => {
     });
 
     it('adds gitauthorcheck.config.js', () => {
-      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'gitauthorcheck.config.js'));
+      assert.file(
+        path.join(OUTPUT_PATH, PROJECT_NAME, 'gitauthorcheck.config.js'),
+      );
     });
   });
 });
