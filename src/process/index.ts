@@ -5,10 +5,6 @@ export = class GitHooksGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
-    this.option('projectName', {
-      description: 'Project Name: ',
-      type: String,
-    });
     this.option('addPrettier', {
       description: 'Add Prettier configuration?',
       type: Boolean,
@@ -16,6 +12,14 @@ export = class GitHooksGenerator extends AbstractGenerator {
     this.option('addTSLint', {
       description: 'Add TSLint configuration?',
       type: Boolean,
+    });
+    this.option('isPublic', {
+      description: 'Is this a public package?',
+      type: Boolean,
+    });
+    this.option('projectName', {
+      description: 'Project Name: ',
+      type: String,
     });
   }
 
@@ -26,6 +30,7 @@ export = class GitHooksGenerator extends AbstractGenerator {
   async install() {
     const pkgJson = {
       devDependencies: {
+        '@endemolshinegroup/git-author-check': '^1',
         '@semantic-release/changelog': '^3',
         '@semantic-release/git': '^7',
         husky: '^1',
@@ -36,6 +41,11 @@ export = class GitHooksGenerator extends AbstractGenerator {
         'semantic-release': 'semantic-release',
       },
     };
+
+
+    if (this.options.isPublic) {
+      delete pkgJson.devDependencies['@endemolshinegroup/git-author-check'];
+    }
 
     this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
 

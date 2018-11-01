@@ -12,6 +12,7 @@ describe('app:process', () => {
   const options = {
     addPrettier: true,
     addTSLint: true,
+    isPublic: true,
     projectName: PROJECT_NAME,
     skipInstall: true,
   };
@@ -47,6 +48,32 @@ describe('app:process', () => {
         path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
         /"semantic-release":\s"semantic-release"/g,
       );
+    });
+  });
+
+  describe('Generates a private project correctly', () => {
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+
+    beforeEach(async () => {
+      return generateWithOptions(__dirname, OUTPUT_PATH, {
+        ...options,
+        isPublic: false,
+      });
+    });
+
+    afterEach(() => {
+      rimraf.sync(OUTPUT_PATH);
+    });
+
+    it('adds dependencies to package.json', () => {
+      assert.fileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
+        /@endemolshinegroup\/git-author-check/g,
+      );
+    });
+
+    it('adds gitauthorcheck.config.js', () => {
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'gitauthorcheck.config.js'));
     });
   });
 });
