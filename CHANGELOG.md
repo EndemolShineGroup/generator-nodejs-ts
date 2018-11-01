@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.8.0...v1.9.0) (2018-11-01)
+
+
+### Bug Fixes
+
+* **build:** only notify Slack on build changes and failures ([b105bb1](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/b105bb1))
+* **typescript:** remove JSON type and enable resolveJsonModule ([23d4599](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/23d4599))
+
+
+### Features
+
+* **process:** add git-author-check ([96d0a74](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/96d0a74))
+
 # [1.8.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.7.0...v1.8.0) (2018-10-31)
 
 
