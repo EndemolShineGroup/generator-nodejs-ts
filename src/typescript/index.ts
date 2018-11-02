@@ -18,21 +18,6 @@ export = class TypeScriptGenerator extends AbstractGenerator {
   }
 
   async writing() {
-    if (this.options.generateExamples) {
-      this.copyTemplates(files);
-      return;
-    }
-
-    const filter = createFileFilter('src/index.');
-
-    this.copyTemplates({
-      common: files.common.filter(filter),
-      private: files.private.filter(filter),
-      public: files.public.filter(filter),
-    });
-  }
-
-  async install() {
     const pkgJson = {
       dependencies: {
         tslib: '^1.9.3',
@@ -57,6 +42,21 @@ export = class TypeScriptGenerator extends AbstractGenerator {
 
     this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
 
+    if (this.options.generateExamples) {
+      this.copyTemplates(files);
+      return;
+    }
+
+    const filter = createFileFilter('src/index.');
+
+    this.copyTemplates({
+      common: files.common.filter(filter),
+      private: files.private.filter(filter),
+      public: files.public.filter(filter),
+    });
+  }
+
+  async install() {
     this.yarnInstall();
   }
 };

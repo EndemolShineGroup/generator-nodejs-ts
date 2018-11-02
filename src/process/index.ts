@@ -25,9 +25,6 @@ export = class GitHooksGenerator extends AbstractGenerator {
 
   async writing() {
     this.copyTemplates(files);
-  }
-
-  async install() {
     const pkgJson = {
       devDependencies: {
         '@endemolshinegroup/git-author-check': '^1',
@@ -42,13 +39,14 @@ export = class GitHooksGenerator extends AbstractGenerator {
       },
     };
 
-
     if (this.options.isPublic) {
       delete pkgJson.devDependencies['@endemolshinegroup/git-author-check'];
     }
 
     this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+  }
 
+  async install() {
     this.yarnInstall();
   }
 };

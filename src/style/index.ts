@@ -25,9 +25,6 @@ export = class StyleGenerator extends AbstractGenerator {
 
   async writing() {
     this.copyTemplates(files);
-  }
-
-  async install() {
     const pkgJson = {
       devDependencies: {
         '@commitlint/cli': '^7',
@@ -44,8 +41,7 @@ export = class StyleGenerator extends AbstractGenerator {
       },
       scripts: {
         commit: 'git-cz',
-        lint:
-          "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
+        lint: `tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'`,
       },
     };
 
@@ -56,7 +52,9 @@ export = class StyleGenerator extends AbstractGenerator {
     }
 
     this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+  }
 
+  async install() {
     this.yarnInstall();
   }
 };
