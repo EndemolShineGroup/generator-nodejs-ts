@@ -23,6 +23,7 @@ export default class NodeJsTypeScriptGenerator extends Generator {
 
     this.composeWith(require.resolve('../repo'), this.answers);
     this.composeWith(require.resolve('../node'), this.answers);
+    this.composeWith(require.resolve('../docs'), this.answers);
     this.composeWith(require.resolve('../typescript'), this.answers);
     this.composeWith(require.resolve('../build'), this.answers);
     this.composeWith(require.resolve('../process'), {
