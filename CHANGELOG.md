@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.9.0...v1.10.0) (2018-11-02)
+
+
+### Bug Fixes
+
+* **subgenerators:** move package.json updates to writing() lifecycle ([f853a7e](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/f853a7e))
+
+
+### Features
+
+* **docs:** add docs subgenerator ([7a1accd](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/7a1accd)), closes [#37](https://github.com/EndemolShineGroup/generator-nodejs-ts/issues/37)
+
 # [1.9.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.8.0...v1.9.0) (2018-11-01)
 
 
