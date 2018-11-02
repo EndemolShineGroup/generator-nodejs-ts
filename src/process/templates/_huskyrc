@@ -1,6 +1,6 @@
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "git-author-check && lint-staged"
+    "pre-commit": "<%_ if(!isPublic) { _%>git-author-check && <% } _%> lint-staged"
   }
 }
