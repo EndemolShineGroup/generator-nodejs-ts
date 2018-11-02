@@ -14,7 +14,7 @@ describe('app:build', () => {
     projectName: PROJECT_NAME,
   };
 
-  describe('Generates Travis CI configuration for a public project', () => {
+  describe('Generates a public project correctly', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
@@ -30,7 +30,7 @@ describe('app:build', () => {
     });
   });
 
-  describe('Generates CodeBuild configuration for a private project', () => {
+  describe('Generates a private project correctly', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
     beforeEach(async () => {
