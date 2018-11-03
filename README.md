@@ -1,4 +1,4 @@
-# @endemolshinegroup/generator-nodejs-ts
+![Banner][icon-banner]
 
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
@@ -14,11 +14,9 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
 
-A Yeoman project generator for Typescript projects.
-
-This generator is geared towards quickly getting set up with a best-practices
-compliant, testable TypeScript project that can be set up with CI/CD as
-painlessly as possible.
+A Yeoman project generator for Typescript projects. This generator is geared
+towards quickly getting set up with a best-practices compliant, testable
+TypeScript project that can be set up with CI/CD as painlessly as possible.
 
 ## Installation
 
@@ -56,6 +54,8 @@ If a public project is created, the following services are added:
 If a private project is created, the following services are added:
 
 - [AWS CodeBuild](https://aws.amazon.com/codebuild/)
+
+[icon-banner]: docs/assets/banner.png
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
