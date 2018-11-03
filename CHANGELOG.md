@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.10.0...v1.11.0) (2018-11-03)
+
+
+### Bug Fixes
+
+* **process:** correct MarkdownLint configuration syntax ([c87c297](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/c87c297))
+* **process:** only add git-author-check to private projects ([58d1bae](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/58d1bae))
+
+
+### Features
+
+* **process:** add MarkdownLint configuration file ([fec2cc8](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/fec2cc8))
+
 # [1.10.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.9.0...v1.10.0) (2018-11-02)
 
 
