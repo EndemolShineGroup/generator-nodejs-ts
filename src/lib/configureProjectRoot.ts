@@ -2,6 +2,10 @@ import path from 'path';
 
 import AbstractGenerator from './AbstractGenerator';
 
+/**
+ * Configures a generator's destination root from a `projectName` option
+ * @param gen
+ */
 export default (gen: AbstractGenerator) => {
   const targetDirName = gen
     .destinationRoot()

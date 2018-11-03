@@ -1,12 +1,11 @@
-import AbstractGenerator from './AbstractGenerator';
+import AbstractGenerator, { FilesToCopy } from './AbstractGenerator';
 import replaceTemplatePrefix from './replaceTemplatePrefix';
 
-export interface FilesToCopy {
-  common: string[];
-  public: string[];
-  private: string[];
-}
-
+/**
+ * Copies template files to a destination
+ * @param gen
+ * @param files
+ */
 export default (gen: AbstractGenerator, files: FilesToCopy) => {
   let OutputFiles: string[] = [...files.common];
 
