@@ -51,6 +51,22 @@ describe('app:process', () => {
     });
   });
 
+  describe('Generates a public project correctly', () => {
+    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+
+    beforeEach(async () => {
+      return generateWithOptions(__dirname, OUTPUT_PATH, options);
+    });
+
+    afterEach(() => {
+      rimraf.sync(OUTPUT_PATH);
+    });
+
+    it('adds .mdlrc', () => {
+      assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.mdlrc'));
+    });
+  });
+
   describe('Generates a private project correctly', () => {
     const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
 
