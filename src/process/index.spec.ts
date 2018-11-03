@@ -62,6 +62,13 @@ describe('app:process', () => {
       rimraf.sync(OUTPUT_PATH);
     });
 
+    it('does not add git-author-check to .huskyrc', () => {
+      assert.noFileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, '.huskyrc'),
+        /git-author-check/g,
+      );
+    });
+
     it('adds .mdlrc', () => {
       assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, '.mdlrc'));
     });
@@ -91,6 +98,13 @@ describe('app:process', () => {
     it('adds gitauthorcheck.config.js', () => {
       assert.file(
         path.join(OUTPUT_PATH, PROJECT_NAME, 'gitauthorcheck.config.js'),
+      );
+    });
+
+    it('adds git-author-check to .huskyrc', () => {
+      assert.fileContent(
+        path.join(OUTPUT_PATH, PROJECT_NAME, '.huskyrc'),
+        /git-author-check/g,
       );
     });
   });
