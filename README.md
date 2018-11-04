@@ -82,4 +82,3 @@ If a private project is created, the following services are added:
 [link-semantic-release]: https://semantic-release.gitbooks.io/semantic-release/
 [icon-prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?longCache=true&style=flat-square
 [link-prettier]: https://prettier.io/
-
