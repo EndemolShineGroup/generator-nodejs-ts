@@ -52,7 +52,7 @@
     "@types/rimraf": "^2.0.2",
     "@types/uuid": "^3.4.4",
     "@types/yeoman-generator": "^3.0.0",
-    "@types/yeoman-test": "^1.7.4",
+    "@types/yeoman-test": "^2.0.0",
     "commitizen": "^3.0.2",
     "husky": "^1",
     "jest": "^23",
