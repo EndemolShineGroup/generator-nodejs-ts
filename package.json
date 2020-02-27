@@ -50,7 +50,7 @@
     "@types/jest": "^23.3.7",
     "@types/node": "^10",
     "@types/rimraf": "^2.0.2",
-    "@types/uuid": "^3.4.4",
+    "@types/uuid": "^7.0.0",
     "@types/yeoman-generator": "^3.0.0",
     "@types/yeoman-test": "^1.7.4",
     "commitizen": "^3.0.2",
