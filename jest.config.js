@@ -1,18 +1,11 @@
-const preset = require('ts-jest').jestPreset;
-
 module.exports = {
   preset: 'ts-jest',
-  collectCoverage: false,
+  testEnvironment: 'node',
   coveragePathIgnorePatterns: [
-    '/src/setupTests.ts',
     '/node_modules/',
+    '/tests/',
     '/__fixtures__/',
   ],
-  globals: {
-    'ts-jest': {
-      tsConfig: "tsconfig.test.json",
-    },
-  },
   coverageThreshold: {
     global: {
       branches: 90,
@@ -21,18 +14,16 @@ module.exports = {
       statements: 95,
     },
   },
-  modulePathIgnorePatterns: [
-    '.*/templates'
-  ],
+  globals: {
+    'ts-jest': {
+      tsConfig: "tsconfig.test.json",
+    },
+  },
   moduleDirectories: [
     'src',
     'node_modules',
   ],
-  testMatch: [
-    ...preset.testMatch,
-    '**/?(*.)+(spec|integ|test).ts?(x)',
-  ],
-  transformIgnorePatterns: [
-    '<rootDir>/node_modules/',
+  modulePathIgnorePatterns: [
+    '.*/templates'
   ],
 };
