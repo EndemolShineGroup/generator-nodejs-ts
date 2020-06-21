@@ -56,7 +56,7 @@
     "@types/yeoman-generator": "^3",
     "@types/yeoman-test": "^2",
     "commitizen": "^3",
-    "husky": "^1",
+    "husky": "^4",
     "jest": "^26",
     "lint-staged": "^10",
     "prettier": "^1",
