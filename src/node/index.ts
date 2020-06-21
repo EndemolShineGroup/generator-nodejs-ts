@@ -29,6 +29,39 @@ class NodeGenerator extends AbstractGenerator {
 
   writing() {
     this.copyTemplates(files);
+
+    const {
+      isPublic,
+      projectName,
+      projectScope,
+      projectDescription,
+      version,
+    } = this.options;
+
+    const license = isPublic ? 'MIT' : 'UNLICENSED';
+
+    const packageJsonUpdates = {
+      description: projectDescription,
+      homepage: `https://github.com/EndemolShineGroup/${projectName}`,
+      license,
+      name: `${projectScope}/${projectName}`,
+      repository: {
+        url: `https://github.com/EndemolShineGroup/${projectName}.git`,
+      },
+      version,
+    };
+
+    this.fs.extendJSON(
+      this.destinationPath('package.json'),
+      packageJsonUpdates,
+    );
+  }
+
+  async install() {
+    const dependencies: string[] = [];
+    const devDependencies: string[] = ['jest', 'rimraf'];
+    this.yarnInstall(dependencies);
+    this.yarnInstall(devDependencies, { dev: true });
   }
 }
 

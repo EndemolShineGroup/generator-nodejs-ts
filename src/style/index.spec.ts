@@ -38,17 +38,6 @@ describe('app:style', () => {
       });
     });
 
-    it('adds dependencies to package.json', () => {
-      ['@commitlint/cli', 'commitizen', 'prettier', 'tslint'].forEach(
-        (dependency) => {
-          assert.fileContent(
-            path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-            new RegExp(dependency, 'g'),
-          );
-        },
-      );
-    });
-
     it('adds scripts to package.json', () => {
       [/"commit":\s"git-cz"/g, /"lint":\s"tslint -p tsconfig.json/g].forEach(
         (regex) => {
@@ -70,13 +59,6 @@ describe('app:style', () => {
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('adds dependencies to package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /@endemolshinegroup\/cz-github/g,
-      );
     });
 
     it('correctly inserts options into .czrc', () => {
@@ -103,13 +85,6 @@ describe('app:style', () => {
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('adds dependencies to package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /@endemolshinegroup\/cz-jira-smart-commit/g,
-      );
     });
 
     it('correctly inserts options into .czrc', () => {

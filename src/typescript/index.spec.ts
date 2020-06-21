@@ -31,22 +31,6 @@ describe('app:typescript', () => {
       assert.file(path.join(OUTPUT_PATH, PROJECT_NAME, 'jest.config.js'));
     });
 
-    it('adds dependencies to package.json', () => {
-      [
-        '@types/jest',
-        '@types/node',
-        'rimraf',
-        'ts-jest',
-        'typedoc',
-        'typescript',
-      ].forEach((dependency) => {
-        assert.fileContent(
-          path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-          new RegExp(dependency, 'g'),
-        );
-      });
-    });
-
     it('adds scripts to package.json', () => {
       [
         `"prebuild": "rimraf dist/"`,

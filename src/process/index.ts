@@ -25,29 +25,31 @@ class GitHooksGenerator extends AbstractGenerator {
 
   async writing() {
     this.copyTemplates(files);
-    const pkgJson = {
-      devDependencies: {
-        '@endemolshinegroup/git-author-check': '^1',
-        '@semantic-release/changelog': '^3',
-        '@semantic-release/git': '^7',
-        husky: '^1',
-        'lint-staged': '^8',
-        'semantic-release': '^15',
-      },
+
+    this.fs.extendJSON(this.destinationPath('package.json'), {
       scripts: {
         'semantic-release': 'semantic-release',
       },
-    };
-
-    if (this.options.isPublic) {
-      delete pkgJson.devDependencies['@endemolshinegroup/git-author-check'];
-    }
-
-    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+    });
   }
 
   async install() {
-    this.yarnInstall();
+    const dependencies: string[] = [];
+    const devDependencies: string[] = [
+      '@endemolshinegroup/git-author-check',
+      '@semantic-release/changelog',
+      '@semantic-release/git',
+      'husky',
+      'lint-staged',
+      'semantic-release',
+    ];
+
+    if (!this.options.isPublic) {
+      devDependencies.push('@endemolshinegroup/git-author-check');
+    }
+
+    this.yarnInstall(dependencies);
+    this.yarnInstall(devDependencies, { dev: true });
   }
 }
 

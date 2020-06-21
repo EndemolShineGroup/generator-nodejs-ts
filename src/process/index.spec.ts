@@ -34,15 +34,6 @@ describe('app:process', () => {
       });
     });
 
-    it('adds dependencies to package.json', () => {
-      ['husky', 'lint-staged', 'semantic-release'].forEach((dependency) => {
-        assert.fileContent(
-          path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-          new RegExp(dependency, 'g'),
-        );
-      });
-    });
-
     it('adds scripts to package.json', () => {
       assert.fileContent(
         path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
@@ -86,13 +77,6 @@ describe('app:process', () => {
 
     afterEach(() => {
       rimraf.sync(OUTPUT_PATH);
-    });
-
-    it('adds dependencies to package.json', () => {
-      assert.fileContent(
-        path.join(OUTPUT_PATH, PROJECT_NAME, 'package.json'),
-        /@endemolshinegroup\/git-author-check/g,
-      );
     });
 
     it('adds gitauthorcheck.config.js', () => {

@@ -25,37 +25,34 @@ class StyleGenerator extends AbstractGenerator {
 
   async writing() {
     this.copyTemplates(files);
-    const pkgJson = {
-      devDependencies: {
-        '@commitlint/cli': '^7',
-        '@commitlint/config-conventional': '^7',
-        '@endemolshinegroup/cz-github': '^1',
-        '@endemolshinegroup/cz-jira-smart-commit': '^1',
-        '@endemolshinegroup/prettier-config': '^1',
-        '@endemolshinegroup/tslint-config': '^1',
-        commitizen: '^3',
-        prettier: '^1',
-        tslint: '^5',
-        'tslint-config-prettier': '^1',
-        'tslint-eslint-rules': '^5',
-      },
+
+    this.fs.extendJSON(this.destinationPath('package.json'), {
       scripts: {
         commit: 'git-cz',
-        lint: `tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'`,
+        lint:
+          "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
       },
-    };
-
-    if (this.options.isPublic) {
-      delete pkgJson.devDependencies['@endemolshinegroup/cz-jira-smart-commit'];
-    } else {
-      delete pkgJson.devDependencies['@endemolshinegroup/cz-github'];
-    }
-
-    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+    });
   }
 
   async install() {
-    this.yarnInstall();
+    const dependencies: string[] = [];
+    const devDependencies: string[] = [
+      '@commitlint/cli',
+      '@commitlint/config-conventional',
+      this.options.isPublic
+        ? '@endemolshinegroup/cz-github'
+        : '@endemolshinegroup/cz-jira-smart-commit',
+      '@endemolshinegroup/prettier-config',
+      '@endemolshinegroup/tslint-config',
+      'commitizen',
+      'prettier',
+      'tslint',
+      'tslint-config-prettier',
+      'tslint-eslint-rules',
+    ];
+    this.yarnInstall(dependencies);
+    this.yarnInstall(devDependencies, { dev: true });
   }
 }
 

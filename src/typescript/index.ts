@@ -18,46 +18,44 @@ class TypeScriptGenerator extends AbstractGenerator {
   }
 
   async writing() {
-    const pkgJson = {
-      dependencies: {
-        tslib: '^1.9.3',
-      },
-      devDependencies: {
-        '@types/jest': '^23',
-        '@types/node': '^10',
-        rimraf: '^2',
-        'ts-jest': '^23',
-        typedoc: '^0.13.0',
-        typescript: '^3',
-      },
+    this.fs.extendJSON(this.destinationPath('package.json'), {
+      types: 'dist/index.d.ts',
       scripts: {
         prebuild: 'rimraf dist/',
-
         build: 'tsc',
         'build:docs':
           'rimraf docs/api && typedoc --out docs/api --target es6 --theme minimal --mode file src',
       },
-      types: 'dist/index.d.ts',
-    };
+    });
 
-    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
+    let filesToCopy = files;
 
-    if (this.options.generateExamples) {
-      this.copyTemplates(files);
-      return;
+    // Exclude source examples
+    if (!this.options.generateExamples) {
+      const filter = createFileFilter('src/index.');
+      filesToCopy = {
+        common: files.common.filter(filter),
+        private: files.private.filter(filter),
+        public: files.public.filter(filter),
+      };
     }
 
-    const filter = createFileFilter('src/index.');
-
-    this.copyTemplates({
-      common: files.common.filter(filter),
-      private: files.private.filter(filter),
-      public: files.public.filter(filter),
-    });
+    this.copyTemplates(filesToCopy);
   }
 
   async install() {
-    this.yarnInstall();
+    const dependencies: string[] = ['tslib'];
+    const devDependencies: string[] = [
+      '@types/jest',
+      '@types/node',
+      'rimraf',
+      'ts-jest',
+      'typedoc',
+      'typescript',
+    ];
+
+    this.yarnInstall(dependencies);
+    this.yarnInstall(devDependencies, { dev: true });
   }
 }
 
