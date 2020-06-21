@@ -60,7 +60,7 @@
     "jest": "^26",
     "lint-staged": "^10",
     "prettier": "^1",
-    "rimraf": "^2",
+    "rimraf": "^3",
     "semantic-release": "^15",
     "ts-jest": "^26",
     "tslint": "^5",
