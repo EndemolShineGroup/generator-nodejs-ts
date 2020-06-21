@@ -1,7 +1,7 @@
 import path from 'path';
 import Generator from 'yeoman-generator';
 
-import AbstractGenerator from '../lib/AbstractGenerator';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import configureProjectRoot from '../lib/configureProjectRoot';
 import prompts from './prompts';
 

@@ -1,6 +1,6 @@
 import path from 'path';
 
-import AbstractGenerator from './AbstractGenerator';
+import { AbstractGenerator } from './AbstractGenerator';
 
 /**
  * Configures a generator's destination root from a `projectName` option

@@ -11,7 +11,7 @@ export interface FilesToCopy {
   private: string[];
 }
 
-export default abstract class AbstractGenerator extends Generator {
+export abstract class AbstractGenerator extends Generator {
   public answers: Generator.Answers = {};
   public options: Generator.Answers = {};
 

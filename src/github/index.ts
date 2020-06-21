@@ -1,8 +1,7 @@
-import AbstractGenerator from '../lib/AbstractGenerator';
-import copyTemplates from '../lib/copyTemplates';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import files from './files';
 
-export = class GitHubGenerator extends AbstractGenerator {
+class GitHubGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
@@ -19,4 +18,6 @@ export = class GitHubGenerator extends AbstractGenerator {
   async writing() {
     this.copyTemplates(files);
   }
-};
+}
+
+export = GitHubGenerator;

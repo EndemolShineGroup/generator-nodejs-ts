@@ -1,4 +1,4 @@
-import AbstractGenerator from './AbstractGenerator';
+import { AbstractGenerator } from './AbstractGenerator';
 import configureProjectRoot from './configureProjectRoot';
 
 const genMock = ({

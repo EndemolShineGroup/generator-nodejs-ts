@@ -1,4 +1,4 @@
-import AbstractGenerator, { FilesToCopy } from './AbstractGenerator';
+import { AbstractGenerator, FilesToCopy } from './AbstractGenerator';
 import replaceTemplatePrefix from './replaceTemplatePrefix';
 
 /**

@@ -1,7 +1,7 @@
-import AbstractGenerator from '../lib/AbstractGenerator';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import files from './files';
 
-export = class StyleGenerator extends AbstractGenerator {
+class StyleGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
@@ -57,4 +57,6 @@ export = class StyleGenerator extends AbstractGenerator {
   async install() {
     this.yarnInstall();
   }
-};
+}
+
+export = StyleGenerator;

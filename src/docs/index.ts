@@ -1,7 +1,7 @@
-import AbstractGenerator from '../lib/AbstractGenerator';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import files from './files';
 
-export = class DocsGenerator extends AbstractGenerator {
+class DocsGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
@@ -14,4 +14,6 @@ export = class DocsGenerator extends AbstractGenerator {
   writing() {
     this.copyTemplates(files);
   }
-};
+}
+
+export = DocsGenerator;

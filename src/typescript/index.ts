@@ -1,8 +1,8 @@
-import AbstractGenerator from '../lib/AbstractGenerator';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import createFileFilter from '../lib/createFileFilter';
 import files from './files';
 
-export = class TypeScriptGenerator extends AbstractGenerator {
+class TypeScriptGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
@@ -59,4 +59,6 @@ export = class TypeScriptGenerator extends AbstractGenerator {
   async install() {
     this.yarnInstall();
   }
-};
+}
+
+export = TypeScriptGenerator;

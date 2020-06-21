@@ -1,7 +1,7 @@
-import AbstractGenerator from '../lib/AbstractGenerator';
+import { AbstractGenerator } from '../lib/AbstractGenerator';
 import files from './files';
 
-export = class GitHooksGenerator extends AbstractGenerator {
+class GitHooksGenerator extends AbstractGenerator {
   constructor(args: string | string[], options: {}) {
     super(args, options, __dirname);
 
@@ -49,4 +49,6 @@ export = class GitHooksGenerator extends AbstractGenerator {
   async install() {
     this.yarnInstall();
   }
-};
+}
+
+export = GitHooksGenerator;
