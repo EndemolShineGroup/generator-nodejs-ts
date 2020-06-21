@@ -35,7 +35,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "tslib": "^1",
+    "tslib": "^2",
     "yeoman-generator": "^3"
   },
   "devDependencies": {
