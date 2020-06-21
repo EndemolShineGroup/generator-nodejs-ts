@@ -35,28 +35,30 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "tslib": "^1.9.3",
-    "yeoman-generator": "^3.1.1"
+    "tslib": "^1",
+    "yeoman-generator": "^3"
   },
   "devDependencies": {
     "@commitlint/cli": "^7",
     "@commitlint/config-conventional": "^7",
     "@endemolshinegroup/cz-github": "^1",
-    "@endemolshinegroup/git-author-check": "^1.0.1",
+    "@endemolshinegroup/git-author-check": "^1",
     "@endemolshinegroup/prettier-config": "^1",
     "@endemolshinegroup/tslint-config": "^1",
     "@semantic-release/changelog": "^3",
     "@semantic-release/git": "^7",
-    "@types/jest": "^23.3.7",
+    "@types/jest": "^23",
+    "@types/inquirer": "^6",
+    "@types/rx": "^4",
     "@types/node": "10.*",
-    "@types/rimraf": "^2.0.2",
-    "@types/uuid": "^3.4.4",
-    "@types/yeoman-generator": "^3.0.0",
-    "@types/yeoman-test": "^1.7.4",
-    "commitizen": "^3.0.2",
+    "@types/rimraf": "^2",
+    "@types/uuid": "^3",
+    "@types/yeoman-generator": "^3",
+    "@types/yeoman-test": "^2",
+    "commitizen": "^3",
     "husky": "^1",
     "jest": "^23",
-    "lint-staged": "^8.0.0",
+    "lint-staged": "^8",
     "prettier": "^1",
     "rimraf": "^2",
     "semantic-release": "^15",
@@ -66,8 +68,11 @@
     "tslint-eslint-rules": "^5",
     "typedoc": "^0.13.0",
     "typescript": "^3",
-    "uuid": "^3.3.2",
-    "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.9.1"
+    "uuid": "^3",
+    "yeoman-assert": "^3",
+    "yeoman-test": "^2"
+  },
+  "resolutions": {
+    "@types/**/inquirer": "^6"
   }
 }
