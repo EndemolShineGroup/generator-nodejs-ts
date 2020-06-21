@@ -1,7 +1,7 @@
 import os from 'os';
 import path from 'path';
 import rimraf from 'rimraf';
-import uuid from 'uuid/v4';
+import { v4 } from 'uuid';
 // @ts-ignore
 import assert from 'yeoman-assert';
 
@@ -15,7 +15,7 @@ describe('app:typescript', () => {
   };
 
   describe('Generates TypeScript project files', () => {
-    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), v4());
 
     beforeEach(async () => {
       return generateWithOptions(__dirname, OUTPUT_PATH, options);
@@ -69,7 +69,7 @@ describe('app:typescript', () => {
   });
 
   describe('Generates TypeScript project files without example source code', () => {
-    const OUTPUT_PATH = path.join(os.tmpdir(), uuid());
+    const OUTPUT_PATH = path.join(os.tmpdir(), v4());
 
     beforeEach(async () => {
       return generateWithOptions(__dirname, OUTPUT_PATH, {
