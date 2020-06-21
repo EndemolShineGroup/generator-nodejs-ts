@@ -3,7 +3,7 @@
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
 [![Build Status][icon-ci]][link-ci]
-[![Greenkeeper Status][icon-greenkeeper]][link-greenkeeper]
+[![Dependabot Status][icon-dependabot]][link-dependabot]
 
 [![Code Issues][icon-issues]][link-issues]
 [![Codebase Maintainability][icon-maintainability]][link-maintainability]
@@ -63,8 +63,8 @@ If a private project is created, the following services are added:
 [link-npm]: https://www.npmjs.com/package/@endemolshinegroup/generator-nodejs-ts
 [icon-ci]: https://img.shields.io/travis/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-ci]: https://travis-ci.org/EndemolShineGroup/generator-nodejs-ts
-[icon-greenkeeper]: https://img.shields.io/badge/greenkeeper-enabled-brightgreen.svg?longCache=true&style=flat-square
-[link-greenkeeper]: https://greenkeeper.io/
+[icon-dependabot]: https://flat.badgen.net/dependabot/EndemolShineGroup/generator-nodejs-ts?icon=dependabot
+[link-dependabot]: https://dependabot.com/
 
 [icon-issues]: https://img.shields.io/codeclimate/issues/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-issues]: https://codeclimate.com/github/EndemolShineGroup/generator-nodejs-ts/issues
