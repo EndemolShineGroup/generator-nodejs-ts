@@ -50,7 +50,7 @@
     "@types/jest": "^26",
     "@types/inquirer": "^6",
     "@types/rx": "^4",
-    "@types/node": "10.*",
+    "@types/node": "12.*",
     "@types/rimraf": "^3",
     "@types/uuid": "^8",
     "@types/yeoman-generator": "^3",
