@@ -62,7 +62,7 @@ If a private project is created, the following services are added:
 [icon-npm]: https://img.shields.io/npm/v/@endemolshinegroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
 [link-npm]: https://www.npmjs.com/package/@endemolshinegroup/generator-nodejs-ts
 [icon-ci]: https://img.shields.io/travis/EndemolShineGroup/generator-nodejs-ts.svg?longCache=true&style=flat-square
-[link-ci]: https://travis-ci.org/EndemolShineGroup/generator-nodejs-ts
+[link-ci]: https://travis-ci.com/EndemolShineGroup/generator-nodejs-ts
 [icon-dependabot]: https://flat.badgen.net/dependabot/EndemolShineGroup/generator-nodejs-ts?icon=dependabot
 [link-dependabot]: https://dependabot.com/
 
