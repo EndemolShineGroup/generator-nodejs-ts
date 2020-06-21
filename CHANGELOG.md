@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.11.0...v2.0.0) (2020-06-21)
+
+
+### Bug Fixes
+
+* remove unnecessary `export =` prefix ([a160f90](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/a160f90d66b5c99ef5706a72082742f5b2cbd937))
+
+
+### Build System
+
+* change minimum supported Node version ([4b17995](https://github.com/EndemolShineGroup/generator-nodejs-ts/commit/4b17995b2e6b63d6278c47d961dea301ce8a48b4))
+
+
+### BREAKING CHANGES
+
+* change minimum supported version of Node to v10
+
 # [1.11.0](https://github.com/EndemolShineGroup/generator-nodejs-ts/compare/v1.10.0...v1.11.0) (2018-11-03)
 
 
