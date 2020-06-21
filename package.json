@@ -55,7 +55,7 @@
     "@types/uuid": "^8",
     "@types/yeoman-generator": "^3",
     "@types/yeoman-test": "^2",
-    "commitizen": "^3",
+    "commitizen": "^4",
     "husky": "^4",
     "jest": "^26",
     "lint-staged": "^10",
