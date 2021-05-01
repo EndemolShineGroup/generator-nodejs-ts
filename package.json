@@ -49,7 +49,7 @@
     "@semantic-release/git": "^7",
     "@types/inquirer": "^6",
     "@types/jest": "^26",
-    "@types/node": "10.*",
+    "@types/node": "15.*",
     "@types/rimraf": "^3",
     "@types/rx": "^4",
     "@types/uuid": "^8",
