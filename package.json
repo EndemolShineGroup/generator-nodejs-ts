@@ -53,7 +53,7 @@
     "@types/rimraf": "^3",
     "@types/rx": "^4",
     "@types/uuid": "^8",
-    "@types/yeoman-generator": "^3",
+    "@types/yeoman-generator": "^5",
     "@types/yeoman-test": "^2",
     "commitizen": "^4",
     "husky": "^4",
