@@ -68,7 +68,7 @@
     "tslint-eslint-rules": "^5",
     "typedoc": "^0.17.7",
     "typescript": "^3",
-    "uuid": "^8",
+    "uuid": "^9",
     "yeoman-assert": "^3",
     "yeoman-test": "^2"
   },
