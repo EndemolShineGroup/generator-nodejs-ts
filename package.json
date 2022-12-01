@@ -39,7 +39,7 @@
     "yeoman-generator": "^4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9",
+    "@commitlint/cli": "^17",
     "@commitlint/config-conventional": "^9",
     "@endemolshinegroup/cz-github": "^2",
     "@endemolshinegroup/git-author-check": "^1",
